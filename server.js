@@ -8,10 +8,8 @@ var app = express();
 app.use(cors());
 app.use(bodyParser());
 
-
 // CONTROLLERS
 var MainCtrl = require('./controllers/mainCtrl')
-
 
 // MONGOOSE
 var mongoUri = 'mongodb://localhost:27017/getStuffDone';
@@ -20,18 +18,20 @@ mongoose.connection.once('open', function () {
     console.log('Connection to mongoDB successful')
 });
 
-
 // ENDPOINTS
-app.get('/api/test', function (req, res, next) {
-    res.status(200).send('THIS IS WORKING!')
-});
-app.post('/api/post', MainCtrl.createTask);
-app.get('/api/get', MainCtrl.getTasks);
-
+// Create New
+app.post('/api/tasks', MainCtrl.createTask);
+// Get All Tasks
+app.get('/api/tasks', MainCtrl.getTasks);
+// Get 1 Task
+app.get('/api/tasks/:id', MainCtrl.getTask);
+// Update Task
+app.put('/api/tasks/:id', MainCtrl.updateTask);
+// Delete Task
+app.delete('/api/tasks/:id', MainCtrl.deleteTask);
 
 // LINK TO FRONT
 app.use(express.static(__dirname + '/public'));
-
 
 // PORT
 var port = process.env.PORT || 3000;
