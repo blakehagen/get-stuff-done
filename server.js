@@ -12,7 +12,7 @@ app.use(bodyParser());
 var MainCtrl = require('./controllers/mainCtrl')
 
 // MONGOOSE //
-var mongoUri = 'mongodb://localhost:27017/getStuffDone';
+var mongoUri = 'mongodb://bmh:bmh@ds057244.mongolab.com:57244/get-stuff-done-app';
 mongoose.connect(mongoUri);
 mongoose.connection.once('open', function () {
     console.log('Connection to mongoDB successful')
