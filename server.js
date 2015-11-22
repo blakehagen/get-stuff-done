@@ -8,7 +8,9 @@ var app = express();
 app.use(cors());
 app.use(bodyParser());
 
+
 // CONTROLLERS
+var MainCtrl = require('./controllers/mainCtrl')
 
 
 // MONGOOSE
@@ -19,13 +21,17 @@ mongoose.connection.once('open', function () {
 });
 
 
-
 // ENDPOINTS
-
+app.get('/api/test', function (req, res, next) {
+    res.status(200).send('THIS IS WORKING!')
+});
+app.post('/api/post', MainCtrl.createTask);
+app.get('/api/get', MainCtrl.getTasks);
 
 
 // LINK TO FRONT
 app.use(express.static(__dirname + '/public'));
+
 
 // PORT
 var port = process.env.PORT || 3000;
