@@ -1,0 +1,28 @@
+{
+  "name": "get-stuff-done",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "moment": "^2.10.6",
+    "mongoose": "^4.2.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blakehagen/get-stuff-done.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blakehagen/get-stuff-done/issues"
+  },
+  "homepage": "https://github.com/blakehagen/get-stuff-done"
+}
