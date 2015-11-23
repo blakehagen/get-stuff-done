@@ -1,3 +1,17 @@
-<div class="nav">
-    <h3>What do you need to do?</h3>
+<div class="task-input" ng-click="inputToggle()" ng-show="taskAnimateBox">
+    <h3>What do you need to get done?</h3>
+</div>
+<!-- Actual Input Box when box above is clicked -->
+<div class="task-input" ng-show="inputBox">
+    <input placeholder="What do you need to get done?" type="text" autofocus>
+    </input>
+</div>
+<br>
+<br>
+<br>
+<div ng-repeat="task in taskData">
+    <div>{{task.name}}</div>
+    <div>Posted on {{task.createdAt}}</div>
+    <br>
+    <br>
 </div>

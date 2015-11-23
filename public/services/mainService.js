@@ -6,7 +6,7 @@ angular.module('getStuffDoneApp').service('mainService', function ($http, $q) {
             method: 'GET',
             url: 'http://localhost:3000/api/tasks'
         }).then(function (response) {
-            console.log(response);
+            console.log(response.data);
             deferred.resolve(response.data)
         })
         return deferred.promise
