@@ -1,5 +1,6 @@
 angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, mainService) {
 
+    // Show Type-Animated Box and Hide Input Box //
     $scope.taskAnimateBox = true;
     $scope.inputBox = false;
 
@@ -14,12 +15,18 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, mainS
             $scope.taskData = response;
         })
     };
-    
+    // GET TASKS
     $scope.tasks();
-    
-    setInterval(function () {
-        $scope.tasks();
-    }, 30000);
+
+    // POST NEW TASK 
+    $scope.postNew = function () {
+        mainService.postTask($scope.newTask).then(function (response) {
+            $scope.tasks();
+            $scope.newTask = '';
+            $scope.inputToggle();
+            
+        })
+    }
 
 
 

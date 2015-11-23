@@ -1,14 +1,17 @@
-<div class="task-input" ng-click="inputToggle()" ng-show="taskAnimateBox">
-    <h3>What do you need to get done?</h3>
+<div class="section">
+    <div class="task-input" ng-click="inputToggle()" ng-show="taskAnimateBox">
+        <h3>What do you need to get done?</h3>
+    </div>
+    <!-- Actual Input Box when box above is clicked -->
+    <div class="task-input" ng-show="inputBox">
+        <input ng-keyup="$event.keyCode == 13 && postNew()" placeholder="What do you need to get done?" type="text"  ng-model="newTask" autofocus>
+        </input>
+    </div>
+    <div class="task-input btn" ng-show="inputBox" ng-click="postNew()">
+        <h4>Submit</h4>
+    </div>
 </div>
-<!-- Actual Input Box when box above is clicked -->
-<div class="task-input" ng-show="inputBox">
-    <input placeholder="What do you need to get done?" type="text" autofocus>
-    </input>
-</div>
-<br>
-<br>
-<br>
+
 <div ng-repeat="task in taskData">
     <div>{{task.name}}</div>
     <div>Posted on {{task.createdAt}}</div>
