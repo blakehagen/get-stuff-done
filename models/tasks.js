@@ -5,7 +5,8 @@ var Schema = mongoose.Schema;
 var taskSchema = new Schema({
     name: { type: String },
     createdAt: { type: String, default: moment().format('ddd, MMM D YYYY, h:mma') },
-    due_in_hours: { type: Number }
+    due_in_hours: { type: Number },
+    status: {type: String, default: "new"}
 });
 
 var Task = mongoose.model('Task', taskSchema);
