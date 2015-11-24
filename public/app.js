@@ -1,8 +1,15 @@
 angular.module('getStuffDoneApp', ['ui.router']).config(function ($stateProvider, $urlRouterProvider) {
 
     $stateProvider
-        .state('home', {
+
+        .state('login', {
             url: '/',
+            templateUrl: './login/loginTmpl.html',
+            controller: 'loginCtrl'
+        })
+        
+        .state('home', {
+            url: '/:user/mytasks',
             templateUrl: './home/homeTmpl.html',
             controller: 'homeCtrl'
         })

@@ -3,6 +3,8 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 var mongoose = require('mongoose');
 
+var User = require('./models/users')
+
 // EXPRESS //
 var app = express();
 app.use(cors());
@@ -18,17 +20,35 @@ mongoose.connection.once('open', function () {
     console.log('Connection to mongoDB successful')
 });
 
-// ENDPOINTS //
-    // Create New
+// TASK ENDPOINTS //
+// Create New
 app.post('/api/tasks', MainCtrl.createTask);
-    // Get All Tasks
+// Get All Tasks
 app.get('/api/tasks', MainCtrl.getTasks);
-    // Get 1 Task
+// Get 1 Task
 app.get('/api/tasks/:id', MainCtrl.getTask);
-    // Update Task
+// Update Task
 app.put('/api/tasks/:id', MainCtrl.updateTask);
-    // Delete Task
+// Delete Task
 app.delete('/api/tasks/:id', MainCtrl.deleteTask);
+
+// USER ENDPOINTS //
+
+app.post('/api/users', function (req, res, next) {
+    var user = new User(req.body);
+    user.save(function (err, result) {
+        if (err) return res.status(500).send(err);
+        else res.status(200).send(result);
+    })
+});
+
+
+
+
+
+
+
+
 
 // LINK TO FRONT END //
 app.use(express.static(__dirname + '/public'));
