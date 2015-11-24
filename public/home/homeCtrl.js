@@ -25,17 +25,8 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, mainS
             $scope.tasks();
             $scope.newTask = '';
             $scope.inputToggle();
-
         })
     }
-    
-    // DELETE TASK 
-    $scope.removeTask = function (id) {
-        mainService.deleteTask(id).then(function (response) {
-            $scope.tasks();
-        })
-    }
-    
     
     // TOGGLE ITEM BUTTONS
     $scope.showButtons = function (item) {
@@ -45,6 +36,30 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, mainS
     $scope.hideButtons = function (item) {
         item.itemButtons = false;
     }
+    
+    // DELETE TASK 
+    $scope.removeTask = function (id) {
+        mainService.deleteTask(id).then(function (response) {
+            $scope.tasks();
+        })
+    }
+    
+    // EDIT TASK 
+    $scope.editTask = function (id, updatedTask) {
+        var editObj = {
+            name: updatedTask
+        }
+        mainService.updateTask(id, editObj).then(function (response) {
+            $scope.tasks();
+        })
+    }
+    // EDIT TASK FIELD TOGGLE
+    $scope.showEditField = function (item) {
+        item.editField = !item.editField;
+        item.taskName = !item.taskName;
+    }
+
+
 
 
 
