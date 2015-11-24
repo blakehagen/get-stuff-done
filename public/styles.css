@@ -25,23 +25,35 @@ h4 {
     color: #333;
 }
 
+h5 {
+    font-size: 22px;
+    font-weight: 100;
+    color: #333;
+}
+
+h6 {
+    font-size: 11px;
+    font-weight: 100;
+    color: #333;
+}
+
 .task-input {
     width: 420px;
-    margin: 50px auto 0px;
-    padding-left: 9px;
+    margin: 0 auto;
+    padding-left: 23px;
     text-align: center;
     border: 1px solid #00AB6B;
     border-radius: 30px;
 }
 
-/* Typing Animation */
+/* Typing Animation and input box */
 @keyframes typing { from { width: 0; } }
 @keyframes blink-caret { 50% { border-color: transparent; } }
 
 h3 { 
     font-family: 'Monaco', monospace;
     font-weight: 100;
-    font-size: 22px;
+    font-size: 20px;
     color: #ccc;
 	border-right: .1em solid;
 	width: 16em; /* fallback */
@@ -56,7 +68,7 @@ h3 {
 input {
     font-family: 'Monaco', monospace;
     font-weight: 100;
-    font-size: 22px;
+    font-size: 20px;
     color: #333;
     border: none;
 	margin: 10px 8px;
@@ -82,13 +94,14 @@ input:focus, textarea:focus {
 :-ms-input-placeholder {  
    color: #ddd;
 }
+   /* ************************** */
 
 .section {
     width: 100%;
-    height: 170px;
-    /*border: 1px solid purple;*/
+    height: 120px;
+    /*border: 1px solid gold;*/
     text-align: center;
-    vertical-align: top;
+    margin-top: 50px;
 }
 
 .btn {
@@ -101,8 +114,8 @@ input:focus, textarea:focus {
 }
 
 .main { 
-    border: 1px solid blue;
-    width: 500px;
+    /*border: 1px solid blue;*/
+    width: 450px;
     margin: 0 auto;
 }
 
@@ -110,13 +123,18 @@ input:focus, textarea:focus {
     width: 100px;
     height: 100%;
     min-height: 50px;
-    border: 1px solid red;
-    margin: 0 auto;
+    /*border: 1px solid red;*/
+    margin-top: 12px;
     float: left;
 }
 
 .content {
-    height: auto;
+    /*height: auto;*/
+    margin: 0;
+}
+
+.no-margin {
+    margin: 0;
 }
 
 .row {
@@ -124,19 +142,25 @@ input:focus, textarea:focus {
     width: 100%;
     min-height: 50px;
     overflow: auto;
-    /*margin-bottom: 10px;*/
-    border: 1px solid orange;
+    /*border: 1px solid orange;*/
 }
 
 .row-item {
-    border: 1px solid darkolivegreen;
-    width: 395px;
-    min-height: 50px;
+    /*border: 1px solid darkolivegreen;*/
+    width: 345px;
+    height: 100%;
+    overflow: scroll;
     float: right;
+    padding: 10px 5px 10px 10px;
+    text-align: left;
 }
 
-button {
-    display: inline-block;
+.sml-btn {
+    border: 1px solid #00AB6B;
+    border-radius: 10px;
+    width: 56px;
+    margin: 5px auto;
+    cursor: pointer;
 }
 
 

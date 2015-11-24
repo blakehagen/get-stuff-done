@@ -1,11 +1,12 @@
 <div class="main">
-    <div class="row" ng-repeat="task in taskData">
+    <div class="row" ng-repeat="task in taskData | orderBy: 'createdAt'">
         <div class="side">
-            <button>Edit</button>
-            <button ng-click="removeTask(task._id)">Delete</button>
+            <div class="sml-btn"><h6>Edit</h6></div>
+            <div class="sml-btn" ng-click="removeTask(task._id)"><h6>Delete</h6></div>
         </div>
         <div class="row-item">
-            {{task.name}}
-            <br> Posted on {{task.createdAt}}
+            <h5>{{task.name}}</h5>
+            <h6>{{task.createdAt}}</h6>
         </div>
     </div>
+</div>
