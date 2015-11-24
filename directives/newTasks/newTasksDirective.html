@@ -1,6 +1,6 @@
 <div class="main">
-    <div class="row" ng-repeat="task in taskData | orderBy: 'createdAt'">
-        <div class="side">
+    <div class="row" ng-mouseenter="showButtons(this)" ng-mouseleave="hideButtons(this)" ng-repeat="task in taskData | orderBy: '-'">
+        <div class="side" ng-show="itemButtons">
             <div class="sml-btn"><h6>Edit</h6></div>
             <div class="sml-btn" ng-click="removeTask(task._id)"><h6>Delete</h6></div>
         </div>

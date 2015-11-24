@@ -25,7 +25,7 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, mainS
             $scope.tasks();
             $scope.newTask = '';
             $scope.inputToggle();
-            
+
         })
     }
     
@@ -34,6 +34,16 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, mainS
         mainService.deleteTask(id).then(function (response) {
             $scope.tasks();
         })
+    }
+    
+    
+    // TOGGLE ITEM BUTTONS
+    $scope.showButtons = function (item) {
+        item.itemButtons = true;
+    }
+
+    $scope.hideButtons = function (item) {
+        item.itemButtons = false;
     }
 
 
