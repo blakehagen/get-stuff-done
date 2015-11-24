@@ -1,0 +1,11 @@
+<div class="main">
+    <div class="row" ng-repeat="task in taskData">
+        <div class="side">
+            <button>Edit</button>
+            <button ng-click="removeTask(task._id)">Delete</button>
+        </div>
+        <div class="row-item">
+            {{task.name}}
+            <br> Posted on {{task.createdAt}}
+        </div>
+    </div>

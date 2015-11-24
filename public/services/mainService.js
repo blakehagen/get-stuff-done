@@ -19,9 +19,23 @@ angular.module('getStuffDoneApp').service('mainService', function ($http, $q) {
             method: 'POST',
             url: 'http://localhost:3000/api/tasks',
             dataType: 'json',
-            data: { name: newTask }
+            data: {
+                name: newTask,
+                createdAt: moment().format('ddd, MMM D YYYY, h:mma')
+            }
         }).then(function (response) {
-            console.log('New Task Added');
+            deferred.resolve(response)
+        })
+        return deferred.promise
+    }
+    
+    // DELETE TASK
+    this.deleteTask = function (id) {
+        var deferred = $q.defer()
+        $http({
+            method: 'DELETE',
+            url: 'http://localhost:3000/api/tasks/' + id
+        }).then(function (response) {
             deferred.resolve(response)
         })
         return deferred.promise

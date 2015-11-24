@@ -34,7 +34,7 @@ module.exports = {
     // DELETE
     deleteTask: function (req, res, next) {
         Task.findByIdAndRemove(req.params.id, function (err, result) {
-            if (err) return res.status(500).send(err);
+            if (err) return res.status('NO BUENO' + 500).send(err);
             else res.status(200).send(result);
         })
     }

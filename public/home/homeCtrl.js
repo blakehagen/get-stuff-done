@@ -15,6 +15,7 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, mainS
             $scope.taskData = response;
         })
     };
+    
     // GET TASKS
     $scope.tasks();
 
@@ -27,9 +28,13 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, mainS
             
         })
     }
-
-
-
+    
+    // DELETE TASK 
+    $scope.removeTask = function (id) {
+        mainService.deleteTask(id).then(function (response) {
+            $scope.tasks();
+        })
+    }
 
 
 
