@@ -11,7 +11,8 @@ app.use(cors());
 app.use(bodyParser());
 
 // CONTROLLERS //
-var MainCtrl = require('./controllers/mainCtrl')
+var MainCtrl = require('./controllers/mainCtrl');
+var UserCtrl = require('./controllers/userCtrl');
 
 // MONGOOSE //
 var mongoUri = 'mongodb://bmh:bmh@ds057244.mongolab.com:57244/get-stuff-done-app';
@@ -34,13 +35,8 @@ app.delete('/api/tasks/:id', MainCtrl.deleteTask);
 
 // USER ENDPOINTS //
 
-app.post('/api/users', function (req, res, next) {
-    var user = new User(req.body);
-    user.save(function (err, result) {
-        if (err) return res.status(500).send(err);
-        else res.status(200).send(result);
-    })
-});
+app.post('/api/users', UserCtrl.createUser);
+app.get('/api/users', UserCtrl.getUsers);
 
 
 
