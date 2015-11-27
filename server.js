@@ -8,7 +8,7 @@ var User = require('./models/users')
 // EXPRESS //
 var app = express();
 app.use(cors());
-app.use(bodyParser());
+app.use(bodyParser.json());
 
 // CONTROLLERS //
 var MainCtrl = require('./controllers/mainCtrl');
