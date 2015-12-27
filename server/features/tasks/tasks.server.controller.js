@@ -1,4 +1,5 @@
-var Task = require('../models/tasks');
+var Task = require('./tasks.server.model');
+var User = require('../users/user.server.model');
 
 module.exports = {
     

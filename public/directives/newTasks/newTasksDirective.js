@@ -1,6 +1,6 @@
 angular.module('getStuffDoneApp').directive('newTasksDirective', function () {
     return {
-        templateUrl: '../directives/newTasks/newTasksDirective.html'
+        templateUrl: './directives/newTasks/newTasksDirective.html'
 
     }
 

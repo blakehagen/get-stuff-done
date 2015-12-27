@@ -1,5 +1,5 @@
-var User = require('../models/users');
-var Task = require('../models/tasks');
+var User = require('./user.server.model');
+var Task = require('../tasks/tasks.server.controller');
 
 module.exports = {
 

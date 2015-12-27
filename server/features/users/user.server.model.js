@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var TaskSchema = require('../models/tasks')
+var TaskSchema = require('../tasks/tasks.server.model')
 
 
 var UserSchema = new Schema({
