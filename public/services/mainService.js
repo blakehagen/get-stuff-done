@@ -29,11 +29,13 @@ angular.module('getStuffDoneApp').service('mainService', function ($http, $q) {
     }
     
     // DELETE TASK //
-    this.deleteTask = function (id) {
+    this.deleteTask = function (delObj) {
         var deferred = $q.defer()
         $http({
             method: 'DELETE',
-            url: 'http://localhost:3000/api/tasks/' + id
+            url: 'http://localhost:3000/api/tasks/' + delObj.id,
+            dataType: 'json',
+            data: delObj
         }).then(function (response) {
             // console.log(response.data)
             deferred.resolve(response)

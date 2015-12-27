@@ -18,14 +18,14 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
         })
     };
     
-    // GET TASKS
+    // GET USER/TASKS
     $scope.tasks();
 
     // POST NEW TASK 
     $scope.postNew = function () {
         var postNewObj = {
             name: $scope.newTask,
-            user: $scope.user,
+            userId: $scope.user,
             createdAt: moment().format('ddd, MMM D YYYY, h:mma')
         };
         
@@ -48,7 +48,12 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
     
     // DELETE TASK 
     $scope.removeTask = function (id) {
-        mainService.deleteTask(id).then(function (response) {
+        var delObj = {
+            id: id,
+            userId: $scope.user
+        }
+        mainService.deleteTask(delObj).then(function (response) {
+            console.log('del response ', response);
             $scope.tasks();
         })
     }

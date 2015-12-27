@@ -27,35 +27,23 @@ mongoose.connection.once('open', function () {
 app.use(passport.initialize());
 app.use(passport.session());
 
-
 // AUTH ROUTING //
 require('./server/features/auth/googleAuth.server.routes')(app, passport);
 
-
 // TASK ENDPOINTS //
+
 // Create New
 app.post('/api/tasks', TaskCtrl.createTask);
-// Get All Tasks
-app.get('/api/tasks', TaskCtrl.getTasks);
-// Get 1 Task
-app.get('/api/tasks/:id', TaskCtrl.getTask);
+
 // Update Task
 app.put('/api/tasks/:id', TaskCtrl.updateTask);
+
 // Delete Task
 app.delete('/api/tasks/:id', TaskCtrl.deleteTask);
-
 
 // USER ENDPOINTS //
 app.post('/api/users', UserCtrl.createUser);
 app.get('/api/user/:id', UserCtrl.getUser);
-
-
-
-
-
-
-
-
 
 // LINK TO FRONT END //
 app.use(express.static(__dirname + '/public'));
@@ -66,4 +54,3 @@ var port = process.env.PORT || 3000;
 app.listen(port, function () {
     console.log('Listenting on port ' + port);
 });
-
