@@ -2,6 +2,8 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var mongoose = require('mongoose');
+var passport = require('passport');
+require('./server/config/passport.google')(passport);
 
 var User = require('./server/features/users/user.server.model')
 
@@ -21,6 +23,15 @@ mongoose.connection.once('open', function () {
     console.log('Connection to mongoDB successful')
 });
 
+// INITIALIZE PASSPORT //
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+// AUTH ROUTING //
+require('./server/features/auth/googleAuth.server.routes')(app, passport);
+
+
 // TASK ENDPOINTS //
 // Create New
 app.post('/api/tasks', TaskCtrl.createTask);
@@ -36,7 +47,7 @@ app.delete('/api/tasks/:id', TaskCtrl.deleteTask);
 
 // USER ENDPOINTS //
 app.post('/api/users', UserCtrl.createUser);
-app.get('/api/users', UserCtrl.getUsers);
+app.get('/api/user/:id', UserCtrl.getUser);
 
 
 

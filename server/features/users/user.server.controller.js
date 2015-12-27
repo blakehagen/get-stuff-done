@@ -11,10 +11,10 @@ module.exports = {
         })
     },
 
-    getUsers: function (req, res, next) {
-        User.find({}, function (err, result) {
+    getUser: function (req, res, next) {
+        User.findById(req.params.id).populate('tasks').exec(function (err, user) {
             if (err) return res.status(500).send(err);
-            else res.status(200).send(result);
+            else res.status(200).json(user);
         })
     }
 

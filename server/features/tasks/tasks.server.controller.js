@@ -5,12 +5,24 @@ module.exports = {
     
     // CREATE
     createTask: function (req, res, next) {
-        var newTask = new Task(req.body);
-        newTask.save(function (err, result) {
-            if (err) return res.status(500).send(err);
-            else res.status(200).send(result);
+        var task = new Task(req.body);
+        console.log('userId? ', req.body.user)
+        task.save(function (err, task) {
+            if(err){
+                res.status(500);
+            };
+            User.findByIdAndUpdate(req.body.user, { $push: {
+                tasks: task._id }}, function(err, result){
+                    if(err){
+                        res.status(500);
+                    } else {
+                        console.log('user ', result);
+                    }
+                })
         })
+        res.status(200).json(task);
     },
+    
     // READ (GET ALL TASKS)
     getTasks: function (req, res, next) {
         Task.find({}, function (err, result) {

@@ -1,50 +1,47 @@
 angular.module('getStuffDoneApp').service('mainService', function ($http, $q) {
 
-    // GET TASKS (READ)
-    this.getTasks = function () {
+    // GET LOGGED IN USER TASKS //
+    this.getTasks = function (userId) {
         var deferred = $q.defer();
         $http({
             method: 'GET',
-            url: 'http://localhost:3000/api/tasks'
+            url: 'http://localhost:3000/api/user/' + userId
         }).then(function (response) {
-            console.log(response.data);
+            // console.log(response.data);
             deferred.resolve(response.data)
         })
         return deferred.promise
     }
     
-    // CREATE NEW TASK
-    this.postTask = function (newTask) {
+    // CREATE NEW TASK //
+    this.postTask = function (postNewObj) {
         var deferred = $q.defer()
         $http({
             method: 'POST',
             url: 'http://localhost:3000/api/tasks',
             dataType: 'json',
-            data: {
-                name: newTask,
-                createdAt: moment().format('ddd, MMM D YYYY, h:mma')
-            }
+            data: postNewObj
         }).then(function (response) {
-            console.log(response.data)
-            deferred.resolve(response)
+            // console.log('newTask on service', response.data)
+            deferred.resolve(response.data)
         })
         return deferred.promise
     }
     
-    // DELETE TASK
+    // DELETE TASK //
     this.deleteTask = function (id) {
         var deferred = $q.defer()
         $http({
             method: 'DELETE',
             url: 'http://localhost:3000/api/tasks/' + id
         }).then(function (response) {
-            console.log(response.data)
+            // console.log(response.data)
             deferred.resolve(response)
         })
         return deferred.promise
     }
     
-        // UPDATE TASK (EDIT)
+        // UPDATE TASK (EDIT) //
     this.updateTask = function (id, editObj) {
         var deferred = $q.defer()
         $http({
@@ -53,7 +50,7 @@ angular.module('getStuffDoneApp').service('mainService', function ($http, $q) {
             dataType: 'json',
             data: editObj
         }).then(function (response) {
-            console.log(response.data);
+            // console.log(response.data);
             deferred.resolve(response)
         })
         return deferred.promise

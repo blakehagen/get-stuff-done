@@ -1,4 +1,4 @@
-angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, mainService) {
+angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stateParams, mainService) {
 
     // Show Type-Animated Box and Hide Input Box //
     $scope.taskAnimateBox = true;
@@ -9,10 +9,12 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, mainS
         $scope.taskAnimateBox = !$scope.taskAnimateBox;
     }
 
-    // Populate Current Tasks //
+    // Populate Current User Tasks //
     $scope.tasks = function () {
-        mainService.getTasks().then(function (response) {
-            $scope.taskData = response;
+        mainService.getTasks($stateParams.user).then(function (response) {
+            $scope.taskData = response.tasks;
+            // console.log('taskData', $scope.taskData);
+            $scope.user = $stateParams.user;
         })
     };
     
@@ -21,8 +23,15 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, mainS
 
     // POST NEW TASK 
     $scope.postNew = function () {
-        mainService.postTask($scope.newTask).then(function (response) {
-            $scope.tasks();
+        var postNewObj = {
+            name: $scope.newTask,
+            user: $scope.user,
+            createdAt: moment().format('ddd, MMM D YYYY, h:mma')
+        };
+        
+        mainService.postTask(postNewObj).then(function (response) {
+            $scope.taskData.push(response);
+            // $scope.tasks();
             $scope.newTask = '';
             $scope.inputToggle();
         })
