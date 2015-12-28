@@ -7,10 +7,6 @@
     <div class="social">
         <h5 id="greeting">Hi, {{name}}</h5>
     </div>
-</div>
-
-
-<div class="section">
     <div class="task-input" ng-click="inputToggle()" ng-show="taskAnimateBox">
         <h3>What do you need to get done?</h3>
     </div>
@@ -19,9 +15,6 @@
         <input ng-keyup="$event.keyCode == 13 && postNew()" placeholder="What do you need to get done?" type="text" ng-model="newTask"
         autofocus>
         </input>
-    </div>
-    <div class="task-input btn" ng-show="inputBox" ng-click="postNew()">
-        <h4>Submit</h4>
     </div>
 </div>
 

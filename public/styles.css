@@ -107,8 +107,9 @@ h6 {
 .social {
     display: inline-block;
     height: 100%;
-    margin: 0 7px 0 5px;
+    margin: 0 10px 0 5px;
     vertical-align: top;
+    float: left;
     /*border: 1px solid deepskyblue;*/
 }
 
@@ -126,18 +127,17 @@ h6 {
 #greeting {
     line-height: 29px;
 }
-    
- 
 
 /* ************ */
 
 .task-input {
-    width: 420px;
+    width: 240px;
     margin: 0 auto;
-    padding-left: 23px;
+    padding-left: 10px;
     text-align: center;
     border: 1px solid #00AB6B;
     border-radius: 30px;
+    height: 100%;
 }
 
 /* Typing Animation and input box */
@@ -145,27 +145,28 @@ h6 {
 @keyframes blink-caret { 50% { border-color: transparent; } }
 
 h3 { 
-    font-family: 'Monaco', monospace;
+    font-family: 'Open Sans', 'Monaco', monospace;
     font-weight: 100;
-    font-size: 20px;
+    font-size: 14px;
     color: #ccc;
 	border-right: .1em solid;
 	width: 16em; /* fallback */
-	width: 29ch; /* # of chars */
-	margin: 10px 8px;
+	width: 25ch; /* # of chars */
+    margin: 5px 6px;
 	white-space: nowrap;
 	overflow: hidden;
-	animation: typing 2s steps(29, end), /* # of steps = # of chars */
+	animation: typing 1s steps(25, end), /* # of steps = # of chars */
 	           blink-caret .5s step-end infinite alternate;
 }
 
 input {
-    font-family: 'Monaco', monospace;
+    font-family: 'Open Sans', 'Monaco', monospace;
     font-weight: 100;
-    font-size: 20px;
+    font-size: 14px;
     color: #333;
     border: none;
-	margin: 10px 8px;
+    border-radius: 30px;
+    margin: 4px 6px;
     width: 95%;
 }
 
@@ -195,7 +196,7 @@ input:focus, textarea:focus {
     height: 120px;
     /*border: 1px solid gold;*/
     text-align: center;
-    margin-top: 50px;
+    margin-top: -30px;
 }
 
 .btn {
@@ -216,15 +217,16 @@ input:focus, textarea:focus {
 
 .main { 
     /*border: 1px solid blue;*/
-    width: 390px;
-    margin: 0 auto;
+    width: 420px;
+    margin: 20px auto;
 }
 
 .side {
     height: 100%;
     min-height: 50px;
     /*border: 1px solid red;*/
-    margin-top: 17px;
+    margin-top: 16px;
+    margin-left: 100px;
     float: left;
     text-align: right;
 }
@@ -254,11 +256,10 @@ input:focus, textarea:focus {
 
 .row-item {
     /*border: 1px solid darkolivegreen;*/
-    width: 360px;
+    width: 290px;
     height: 100%;
-    overflow: scroll;
     float: right;
-    padding: 10px 5px 10px 10px;
+    padding: 10px 5px 10px 5px;
     text-align: left;
 }
 
