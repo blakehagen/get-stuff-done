@@ -12,7 +12,9 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
     // Populate Current User Tasks //
     $scope.tasks = function () {
         mainService.getTasks($stateParams.user).then(function (response) {
+            console.log(response);
             $scope.taskData = response.tasks;
+            $scope.name = response.name;
             // console.log('taskData', $scope.taskData);
             $scope.user = $stateParams.user;
         })
@@ -28,10 +30,9 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
             userId: $scope.user,
             createdAt: moment().format('ddd, MMM D YYYY, h:mma')
         };
-        
+
         mainService.postTask(postNewObj).then(function (response) {
             $scope.taskData.push(response);
-            // $scope.tasks();
             $scope.newTask = '';
             $scope.inputToggle();
         })
@@ -53,25 +54,49 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
             userId: $scope.user
         }
         mainService.deleteTask(delObj).then(function (response) {
-            console.log('del response ', response);
             $scope.tasks();
         })
     }
     
-    // EDIT TASK 
-    $scope.editTask = function (id, updatedTask) {
-        var editObj = {
-            name: updatedTask
-        }
-        mainService.updateTask(id, editObj).then(function (response) {
-            $scope.tasks();
-        })
-    }
+    // CHECK TASK COMPLETED
+    // $scope.editTask = function (id, updatedTask) {
+    //     var editObj = {
+    //         status: updatedTask
+    //     }
+    //     mainService.updateTask(id, editObj).then(function (response) {
+    //         $scope.tasks();
+    //     })
+    // }
     // EDIT TASK FIELD TOGGLE
-    $scope.showEditField = function (item) {
-        item.editField = !item.editField;
-        item.taskName = !item.taskName;
-    }
+    // $scope.showEditField = function (item) {
+    //     item.editField = !item.editField;
+    //     item.taskName = !item.taskName;
+    // }
+
+    // MARK TASK AS COMPLETED OR NOT COMPLETED
+    $scope.completed = function (id, status, thisBox) {
+        console.log(status);
+        thisBox.checkBoxDone = !thisBox.checkBoxDone;
+        thisBox.checkBox = !thisBox.checkBox;
+
+        var newStatus;
+        if (status === 'not-completed' || undefined) {
+            newStatus = 'completed';
+        } else if (status === 'completed') {
+            newStatus = 'not-completed';
+        }
+        var completedObj = {
+            status: newStatus
+        };
+        console.log(completedObj);
+        mainService.updateTask(id, completedObj).then(function (response) {
+            for (var i = 0; i < $scope.taskData.length; i++) {
+                if($scope.taskData[i].name === response.name){
+                    $scope.taskData[i].status = response.status;
+                }
+            }
+        })
+    };
 
 
 
@@ -79,5 +104,4 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
 
 
 
-
-})
+});

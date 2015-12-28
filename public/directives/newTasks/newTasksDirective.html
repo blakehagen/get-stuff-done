@@ -1,14 +1,19 @@
 <div class="main">
-    <div class="row" ng-mouseenter="showButtons(this)" ng-mouseleave="hideButtons(this)" ng-repeat="task in taskData | orderBy: '-'">
-        <div class="side" ng-show="itemButtons">
-            <div class="sml-btn" ng-click="showEditField(this)"><h6>Edit</h6></div>
-            <div class="sml-btn" ng-click="removeTask(task._id)"><h6>Delete</h6></div>
+    <div class="row" ng-mouseenter="showButtons(this)" ng-mouseleave="hideButtons(this)" ng-repeat="task in taskData">
+        <div class="side">
+            <!--<div class="sml-btn" ng-click="showEditField(this)"><h6>Edit</h6></div>
+            <div class="sml-btn" ng-click="removeTask(task._id)"><h6>Delete</h6></div>-->
+            <i class="fa fa-square-o" ng-hide="checkBox" ng-click="completed(task._id, task.status, this)"></i>
+            <i class="fa fa-check fa-lg" ng-show="checkBoxDone" ng-click="completed(task._id, task.status, this)"></i>
+
         </div>
         <div class="row-item">
             <h5 ng-hide="taskName">{{task.name}}</h5>
-            <input ng-keyup="$event.keyCode == 13 && editTask(task._id, updatedTask)" class="editTaskInput" type="text" placeholder="{{task.name}}" ng-show="editField" ng-model="updatedTask" autofocus>
-            
-            <div ng-show="editField" class="sml-btn update-btn" ng-click="editTask(task._id, updatedTask)"><h6>Update</h6></div>
+            <input ng-keyup="$event.keyCode == 13 && editTask(task._id, updatedTask)" class="editTaskInput" type="text" placeholder="{{task.name}}"
+            ng-show="editField" ng-model="updatedTask" autofocus>
+
+            <div ng-show="editField" class="sml-btn update-btn" ng-click="editTask(task._id, updatedTask)">
+                <h6>Update</h6></div>
             <h6>{{task.createdAt}}</h6>
         </div>
     </div>
