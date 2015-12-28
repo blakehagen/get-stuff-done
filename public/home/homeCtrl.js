@@ -12,7 +12,7 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
     // Populate Current User Tasks //
     $scope.tasks = function () {
         mainService.getTasks($stateParams.user).then(function (response) {
-            console.log(response);
+            // console.log(response);
             $scope.taskData = response.tasks;
             $scope.name = response.name;
             // console.log('taskData', $scope.taskData);
