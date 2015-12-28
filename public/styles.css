@@ -206,8 +206,9 @@ input:focus, textarea:focus {
     text-align: right;
 }
 
-    .side .fa-check {
+    .side .fa {
         color: #333;
+        cursor: pointer;
     }
 
 .content {
@@ -225,7 +226,7 @@ input:focus, textarea:focus {
     min-height: 50px;
     overflow: auto;
     /*border: 1px solid orange;*/
-    cursor: pointer;
+    cursor: default;
 }
 
 .row-item {

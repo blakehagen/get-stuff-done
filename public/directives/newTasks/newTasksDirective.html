@@ -1,11 +1,8 @@
 <div class="main">
-    <div class="row" ng-mouseenter="showButtons(this)" ng-mouseleave="hideButtons(this)" ng-repeat="task in taskData">
+    <div class="row" ng-repeat="task in taskData">
         <div class="side">
-            <!--<div class="sml-btn" ng-click="showEditField(this)"><h6>Edit</h6></div>
-            <div class="sml-btn" ng-click="removeTask(task._id)"><h6>Delete</h6></div>-->
-            <i class="fa fa-square-o" ng-hide="checkBox" ng-click="completed(task._id, task.status, this)"></i>
-            <i class="fa fa-check fa-lg" ng-show="checkBoxDone" ng-click="completed(task._id, task.status, this)"></i>
-
+            <i class="fa fa-square-o" ng-click="completed(task._id, task.status, this)" ng-if="task.status !== 'completed'"></i>
+            <i class="fa fa-check fa-lg" ng-click="completed(task._id, task.status, this)" ng-if="task.status !== 'not-completed'"></i>
         </div>
         <div class="row-item">
             <h5 ng-hide="taskName">{{task.name}}</h5>

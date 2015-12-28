@@ -27,7 +27,6 @@ module.exports = {
     // UPDATE
     updateTask: function (req, res, next) {
         Task.findByIdAndUpdate(req.params.id, req.body, {new: true}, function (err, result) {
-            console.log('result ', result);
             if (err) {
                 res.status(500).send(err);
             }

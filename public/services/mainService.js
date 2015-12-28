@@ -43,7 +43,6 @@ angular.module('getStuffDoneApp').service('mainService', function ($http, $q) {
     
         // UPDATE TASK (EDIT) //
     this.updateTask = function (id, status) {
-        console.log(status);
         var deferred = $q.defer()
         $http({
             method: 'PUT',

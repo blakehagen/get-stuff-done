@@ -36,7 +36,7 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
             $scope.newTask = '';
             $scope.inputToggle();
         })
-    }
+    };
     
     // TOGGLE ITEM BUTTONS
     $scope.showButtons = function (item) {
@@ -56,7 +56,7 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
         mainService.deleteTask(delObj).then(function (response) {
             $scope.tasks();
         })
-    }
+    };
     
     // CHECK TASK COMPLETED
     // $scope.editTask = function (id, updatedTask) {
@@ -75,10 +75,6 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
 
     // MARK TASK AS COMPLETED OR NOT COMPLETED
     $scope.completed = function (id, status, thisBox) {
-        console.log(status);
-        thisBox.checkBoxDone = !thisBox.checkBoxDone;
-        thisBox.checkBox = !thisBox.checkBox;
-
         var newStatus;
         if (status === 'not-completed' || undefined) {
             newStatus = 'completed';
@@ -88,20 +84,15 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
         var completedObj = {
             status: newStatus
         };
-        console.log(completedObj);
         mainService.updateTask(id, completedObj).then(function (response) {
             for (var i = 0; i < $scope.taskData.length; i++) {
                 if($scope.taskData[i].name === response.name){
                     $scope.taskData[i].status = response.status;
                 }
             }
+            // console.log(response.status);
         })
     };
-
-
-
-
-
 
 
 });
