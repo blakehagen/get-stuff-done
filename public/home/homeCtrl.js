@@ -8,6 +8,11 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
         $scope.inputBox = !$scope.inputBox;
         $scope.taskAnimateBox = !$scope.taskAnimateBox;
     }
+    
+    // Toggle Delete Icons //
+    $scope.showDeleteOptions = function(){
+        $scope.deleteOptions = !$scope.deleteOptions;
+    }
 
     // Populate Current User Tasks //
     $scope.tasks = function () {

@@ -15,6 +15,10 @@ body {
     border: 1px solid #fff;
 }
 
+.left {
+    float: left;
+}
+
 a {
     text-decoration: none;
 }
@@ -35,15 +39,13 @@ a:visited {
 }
 
     .title-container h2 {
-        font-size: 24px;
+        font-size: 30px;
         letter-spacing: 1px;
         line-height: 47px;
         margin-left: 50px;
         font-weight: 100;
         float: left;
     }
-
-
 
 h1,h2,h3,h4,h5,h6 {
     font-family: 'Open Sans', sans-serif;
@@ -74,8 +76,8 @@ h6 {
 .top-container {
     width: 100%;
     height: 30px;
-    margin-top: 5px;
     /*border: 1px solid dodgerblue;*/
+    text-align: center;
 }
 
 .login-btn {
@@ -97,12 +99,53 @@ h6 {
         letter-spacing: 0.5px;
     }
     
+    /* ************ */
+    
+.sign-out-btn {
+    width: 52px;
+    height: 20px;
+    margin-top: 4px;
+}
+.sign-out-btn:hover {
+    -webkit-box-shadow: inset 0px 0px 1.5px 0px #00AB6B;
+    -moz-box-shadow: inset 0px 0px 1.5px 0px #00AB6B;
+    box-shadow: inset 0px 0px 1.5px 0px #00AB6B;
+}
+
+    .sign-out-btn h6 {
+        font-size: 8px;
+        font-weight: 400;
+        text-align: center;
+        line-height: 10px;
+        letter-spacing: 0.5px;
+        color: #333;
+    }
+    
 .id-container {
     height: 100%;
     margin-right: 50px;
     float: right;
     /*border: 1px solid deeppink;*/
 }
+
+.options {
+    display: inline-block;
+    width: 33%;
+    height: 100%;
+    vertical-align: top;
+    /*border: 1px solid palevioletred;*/
+}
+
+.center {
+    text-align: center;
+}
+
+    .options .fa-bars{
+        color: #00AB6B;
+        vertical-align: top;
+        margin: 7px 8px 0 0;
+        cursor: pointer;
+    }
 
 .social {
     display: inline-block;
@@ -118,6 +161,10 @@ h6 {
         color: #333;
     }
     
+    .fa-square-o {
+        padding-left: 4px;
+    }
+    
     .social h5 {
         line-height: 53px;
         font-size: 12px;
@@ -128,16 +175,15 @@ h6 {
     line-height: 29px;
 }
 
-/* ************ */
-
 .task-input {
     width: 240px;
     margin: 0 auto;
-    padding-left: 10px;
+    padding-left: 2px;
     text-align: center;
     border: 1px solid #00AB6B;
     border-radius: 30px;
     height: 100%;
+    display: inline-block;
 }
 
 /* Typing Animation and input box */
@@ -147,26 +193,28 @@ h6 {
 h3 { 
     font-family: 'Open Sans', 'Monaco', monospace;
     font-weight: 100;
-    font-size: 14px;
+    font-size: 13px;
     color: #ccc;
 	border-right: .1em solid;
 	width: 16em; /* fallback */
-	width: 25ch; /* # of chars */
-    margin: 5px 6px;
+	width: 29ch; /* # of chars */
+    margin: 6px 8px;
+    letter-spacing: 1px;
 	white-space: nowrap;
 	overflow: hidden;
-	animation: typing 1s steps(25, end), /* # of steps = # of chars */
+	animation: typing 1s steps(29, end), /* # of steps = # of chars */
 	           blink-caret .5s step-end infinite alternate;
 }
 
 input {
     font-family: 'Open Sans', 'Monaco', monospace;
     font-weight: 100;
-    font-size: 14px;
+    font-size: 13px;
     color: #333;
     border: none;
     border-radius: 30px;
-    margin: 4px 6px;
+    margin: 5px 8px;
+    letter-spacing: 1px;
     width: 95%;
 }
 
@@ -189,7 +237,35 @@ input:focus, textarea:focus {
 :-ms-input-placeholder {  
    color: #ddd;
 }
-   /* ************************** */
+   /* ************************** */ 
+
+.sml-btn-container {
+    /*border: 1px solid orange;*/
+    height: 100%;
+    width: 348px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+    .sml-btn-container .fa {
+        margin: 10px 12px 0 6px;
+        color: #96999E;
+        cursor: pointer;
+        font-size: 18px;
+    }
+    
+    .sml-btn-container h6 {
+        display: inline-block;
+        font-size: 10px;
+        font-weight: 100;
+        letter-spacing: 0.5px;
+        color: #96999E;
+    }
+    
+    .sml-btn-container:hover h6, .sml-btn-container:hover .fa-trash-o {
+        color: #ED6464;
+        cursor: pointer;         
+    }
 
 .section {
     width: 100%;
@@ -212,28 +288,35 @@ input:focus, textarea:focus {
     -webkit-box-shadow: inset 0px 0px 2.5px 0px #00AB6B;
     -moz-box-shadow: inset 0px 0px 2.5px 0px #00AB6B;
     box-shadow: inset 0px 0px 2.5px 0px #00AB6B;
-    
 }
 
 .main { 
     /*border: 1px solid blue;*/
-    width: 420px;
-    margin: 20px auto;
+    width: 470px;
+    margin: 0px auto;
 }
 
 .side {
     height: 100%;
-    min-height: 50px;
+    width: 120px;
     /*border: 1px solid red;*/
     margin-top: 16px;
-    margin-left: 100px;
     float: left;
     text-align: right;
 }
 
     .side .fa {
         color: #333;
+        margin: 0 10px 0 0px;
         cursor: pointer;
+    }
+    
+    .side #gray {
+        color: #C0C3C9;
+    }
+    
+    #gray:hover {
+        color: #ED6464;
     }
 
 .content {
@@ -256,7 +339,7 @@ input:focus, textarea:focus {
 
 .row-item {
     /*border: 1px solid darkolivegreen;*/
-    width: 290px;
+    width: 340px;
     height: 100%;
     float: right;
     padding: 10px 5px 10px 5px;

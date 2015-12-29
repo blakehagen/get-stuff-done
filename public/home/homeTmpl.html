@@ -1,20 +1,35 @@
 <div class="top-container">
-    <a href="/auth/logout">
-        <div class="login-btn">
-            <h5>Sign Out</h5>
+
+    <div class="options left">
+        <a href="/auth/logout">
+            <div class="login-btn sign-out-btn">
+                <h6>Sign Out</h6>
+            </div>
+        </a>
+        <div class="social">
+            <h5 id="greeting">Hi, {{name}}</h5>
         </div>
-    </a>
-    <div class="social">
-        <h5 id="greeting">Hi, {{name}}</h5>
     </div>
-    <div class="task-input" ng-click="inputToggle()" ng-show="taskAnimateBox">
-        <h3>What do you need to get done?</h3>
+    <div class="options center">
+        <i class="fa fa-bars" ng-click="showDeleteOptions()"></i>
+        <div class="task-input" ng-click="inputToggle()" ng-show="taskAnimateBox">
+            <h3>What do you need to get done?</h3>
+        </div>
+        <!-- Actual Input Box when box above is clicked -->
+        <div class="task-input" ng-show="inputBox">
+            <input ng-keyup="$event.keyCode == 13 && postNew()" placeholder="What do you need to get done?" type="text" ng-model="newTask"
+            autofocus>
+            </input>
+        </div>
     </div>
-    <!-- Actual Input Box when box above is clicked -->
-    <div class="task-input" ng-show="inputBox">
-        <input ng-keyup="$event.keyCode == 13 && postNew()" placeholder="What do you need to get done?" type="text" ng-model="newTask"
-        autofocus>
-        </input>
+    <div class="options">
+    </div>
+</div>
+
+<div class="top-container">
+    <div class="sml-btn-container" ng-show="deleteOptions">
+        <i class="fa fa-trash-o"></i>
+        <h6>Delete All Completed Tasks</h6>
     </div>
 </div>
 

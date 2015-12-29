@@ -1,8 +1,9 @@
 <div class="main">
     <div class="row" ng-repeat="task in taskData | orderBy: '-'">
         <div class="side">
+            <i class="fa fa-times" id="gray" ng-show="deleteOptions"></i>
             <i class="fa fa-square-o" ng-click="completed(task._id, task.status, this)" ng-if="task.status !== 'completed'"></i>
-            <i class="fa fa-check fa-lg" ng-click="completed(task._id, task.status, this)" ng-if="task.status !== 'not-completed'"></i>
+            <i class="fa fa-check" ng-click="completed(task._id, task.status, this)" ng-if="task.status !== 'not-completed'"></i>
         </div>
         <div class="row-item">
             <h5 ng-hide="taskName">{{task.name}}</h5>
