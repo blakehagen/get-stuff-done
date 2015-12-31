@@ -71,6 +71,7 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
         mainService.deleteCompletedTasks($scope.user).then(function (response) {
             console.log(response);
             $scope.tasks();
+            $scope.deleteOptions = !$scope.deleteOptions;
         })
     };
 

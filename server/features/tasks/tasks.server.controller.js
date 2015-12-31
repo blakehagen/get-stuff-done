@@ -81,7 +81,7 @@ module.exports = {
                         res.status(500)
                     }
                 })
-                console.log(user.tasks);
+                // console.log(user.tasks);
                 res.status(200).json(user);
             })
         }
