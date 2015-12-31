@@ -41,7 +41,7 @@ angular.module('getStuffDoneApp').service('mainService', function ($http, $q) {
         return deferred.promise
     }
     
-        // UPDATE TASK (EDIT) //
+    // UPDATE TASK (EDIT) //
     this.updateTask = function (id, status) {
         var deferred = $q.defer()
         $http({
@@ -50,6 +50,19 @@ angular.module('getStuffDoneApp').service('mainService', function ($http, $q) {
             dataType: 'json',
             data: status
         }).then(function (response) {
+            deferred.resolve(response.data)
+        })
+        return deferred.promise
+    }
+    
+    // DELETE TASK //
+    this.deleteCompletedTasks = function (userId) {
+        var deferred = $q.defer()
+        $http({
+            method: 'DELETE',
+            url: 'http://localhost:3000/api/tasks/completed/' + userId
+        }).then(function (response) {
+            // console.log(response.data)
             deferred.resolve(response.data)
         })
         return deferred.promise

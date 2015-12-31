@@ -31,19 +31,19 @@ app.use(passport.session());
 require('./server/features/auth/googleAuth.server.routes')(app, passport);
 
 // TASK ENDPOINTS //
-
 // Create New
 app.post('/api/tasks', TaskCtrl.createTask);
-
 // Update Task
 app.put('/api/tasks/:id', TaskCtrl.updateTask);
-
 // Delete Task
 app.delete('/api/tasks/:id', TaskCtrl.deleteTask);
+// Delete All Completed Tasks
+app.delete('/api/tasks/completed/:id', TaskCtrl.deleteCompletedTasks);
 
 // USER ENDPOINTS //
 app.post('/api/users', UserCtrl.createUser);
 app.get('/api/user/:id', UserCtrl.getUser);
+
 
 // LINK TO FRONT END //
 app.use(express.static(__dirname + '/public'));

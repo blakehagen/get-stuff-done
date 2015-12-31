@@ -1,16 +1,7 @@
 angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stateParams, mainService) {
-
-    // Show Type-Animated Box and Hide Input Box //
-    $scope.taskAnimateBox = true;
-    $scope.inputBox = false;
-
-    $scope.inputToggle = function () {
-        $scope.inputBox = !$scope.inputBox;
-        $scope.taskAnimateBox = !$scope.taskAnimateBox;
-    }
     
-    // Toggle Delete Icons //
-    $scope.showDeleteOptions = function(){
+    // Toggle Delete Options //
+    $scope.showDeleteOptions = function () {
         $scope.deleteOptions = !$scope.deleteOptions;
     }
 
@@ -39,44 +30,9 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
         mainService.postTask(postNewObj).then(function (response) {
             $scope.taskData.push(response);
             $scope.newTask = '';
-            $scope.inputToggle();
+            // $scope.inputToggle();
         })
     };
-    
-    // TOGGLE ITEM BUTTONS
-    $scope.showButtons = function (item) {
-        item.itemButtons = true;
-    }
-
-    $scope.hideButtons = function (item) {
-        item.itemButtons = false;
-    }
-    
-    // DELETE TASK 
-    $scope.removeTask = function (id) {
-        var delObj = {
-            id: id,
-            userId: $scope.user
-        }
-        mainService.deleteTask(delObj).then(function (response) {
-            $scope.tasks();
-        })
-    };
-    
-    // CHECK TASK COMPLETED
-    // $scope.editTask = function (id, updatedTask) {
-    //     var editObj = {
-    //         status: updatedTask
-    //     }
-    //     mainService.updateTask(id, editObj).then(function (response) {
-    //         $scope.tasks();
-    //     })
-    // }
-    // EDIT TASK FIELD TOGGLE
-    // $scope.showEditField = function (item) {
-    //     item.editField = !item.editField;
-    //     item.taskName = !item.taskName;
-    // }
 
     // MARK TASK AS COMPLETED OR NOT COMPLETED
     $scope.completed = function (id, status, thisBox) {
@@ -91,11 +47,30 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
         };
         mainService.updateTask(id, completedObj).then(function (response) {
             for (var i = 0; i < $scope.taskData.length; i++) {
-                if($scope.taskData[i].name === response.name){
+                if ($scope.taskData[i].name === response.name) {
                     $scope.taskData[i].status = response.status;
                 }
             }
             // console.log(response.status);
+        })
+    };
+    
+    // DELETE TASK 
+    $scope.deleteTask = function (id) {
+        var delObj = {
+            id: id,
+            userId: $scope.user
+        }
+        mainService.deleteTask(delObj).then(function (response) {
+            $scope.tasks();
+        })
+    };
+
+    // DELETE ALL COMPLETED TASKS //
+    $scope.deleteAllCompleted = function () {
+        mainService.deleteCompletedTasks($scope.user).then(function (response) {
+            console.log(response);
+            $scope.tasks();
         })
     };
 
