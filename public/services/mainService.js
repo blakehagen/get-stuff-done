@@ -11,7 +11,7 @@ angular.module('getStuffDoneApp').service('mainService', function ($http, $q) {
             deferred.resolve(response.data)
         })
         return deferred.promise
-    }
+    };
     
     // CREATE NEW TASK //
     this.postTask = function (postNewObj) {
@@ -26,7 +26,7 @@ angular.module('getStuffDoneApp').service('mainService', function ($http, $q) {
             deferred.resolve(response.data)
         })
         return deferred.promise
-    }
+    };
     
     // DELETE TASK //
     this.deleteTask = function (delObj) {
@@ -35,11 +35,10 @@ angular.module('getStuffDoneApp').service('mainService', function ($http, $q) {
             method: 'DELETE',
             url: 'http://localhost:3000/api/tasks/' + delObj.id
         }).then(function (response) {
-            // console.log(response.data)
             deferred.resolve(response)
         })
         return deferred.promise
-    }
+    };
     
     // UPDATE TASK (EDIT) //
     this.updateTask = function (id, status) {
@@ -53,20 +52,7 @@ angular.module('getStuffDoneApp').service('mainService', function ($http, $q) {
             deferred.resolve(response.data)
         })
         return deferred.promise
-    }
-    
-    // DELETE TASK //
-    this.deleteCompletedTasks = function (userId) {
-        var deferred = $q.defer()
-        $http({
-            method: 'DELETE',
-            url: 'http://localhost:3000/api/tasks/completed/' + userId
-        }).then(function (response) {
-            // console.log(response.data)
-            deferred.resolve(response.data)
-        })
-        return deferred.promise
-    }
+    };
 
 
 

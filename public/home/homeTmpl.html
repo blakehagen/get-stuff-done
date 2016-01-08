@@ -17,15 +17,40 @@
             <input ng-keyup="$event.keyCode == 13 && postNew()" placeholder="Add a task ..." type="text" ng-model="newTask" autofocus>
             </input>
         </div>
+        <div class="sml-btn" ng-click="postNew()">
+            <h6>Submit</h6>
+        </div>
     </div>
     <div class="options">
     </div>
 </div>
 
 <div class="top-container">
-    <div class="sml-btn-container" ng-show="deleteOptions">
-        <i class="fa fa-trash-o" ng-click="deleteAllCompleted()"></i>
-        <h6 ng-click="deleteAllCompleted()">Delete All Completed Tasks</h6>
+    <div class="sml-btn-container">
+        <div class="sub">
+            <h6>Due by end of</h6>
+        </div>
+        <div class="sub box">
+            <i class="fa fa-square-o" ng-hide="day" ng-click="selectDeadlineToggleDay()"></i><i class="fa fa-check-square-o"
+            ng-show="day" ng-click="selectDeadlineToggleDay()"></i>
+        </div>
+        <div class="sub">
+            <h6>Day</h6>
+        </div>
+        <div class="sub box">
+            <i class="fa fa-square-o" ng-hide="week" ng-click="selectDeadlineToggleWeek()"></i><i class="fa fa-check-square-o"
+            ng-show="week" ng-click="selectDeadlineToggleWeek()"></i>
+        </div>
+        <div class="sub">
+            <h6>Week</h6>
+        </div>
+        <div class="sub box">
+            <i class="fa fa-square-o" ng-hide="month" ng-click="selectDeadlineToggleMonth()"></i><i class="fa fa-check-square-o"
+            ng-show="month" ng-click="selectDeadlineToggleMonth()"></i>
+        </div>
+        <div class="sub">
+            <h6>Month</h6>
+        </div>
     </div>
 </div>
 

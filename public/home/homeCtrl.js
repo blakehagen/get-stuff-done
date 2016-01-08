@@ -66,14 +66,25 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
         })
     };
 
-    // DELETE ALL COMPLETED TASKS //
-    $scope.deleteAllCompleted = function () {
-        mainService.deleteCompletedTasks($scope.user).then(function (response) {
-            console.log(response);
-            $scope.tasks();
-            $scope.deleteOptions = !$scope.deleteOptions;
-        })
-    };
+    $scope.selectDeadlineToggleDay = function () {
+        $scope.day = !$scope.day;
+        $scope.week = false;
+        $scope.month = false;
+    }
+
+    $scope.selectDeadlineToggleWeek = function () {
+        $scope.week = !$scope.week;
+        $scope.day = false;
+        $scope.month = false;
+
+    }
+
+    $scope.selectDeadlineToggleMonth = function () {
+        $scope.month = !$scope.month;
+        $scope.day = false;
+        $scope.week = false;
+
+    }
 
 
 });

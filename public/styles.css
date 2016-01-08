@@ -186,34 +186,14 @@ h6 {
     display: inline-block;
 }
 
-/* Typing Animation and input box */
-/*@keyframes typing { from { width: 0; } }
-@keyframes blink-caret { 50% { border-color: transparent; } }
-
-h3 { 
-    font-family: 'Open Sans', 'Monaco', monospace;
-    font-weight: 100;
-    font-size: 13px;
-    color: #ccc;
-	border-right: .1em solid;
-	width: 16em; /* fallback */
-	/*width: 29ch;  # of chars */
-    /*margin: 6px 8px;
-    letter-spacing: 1px;
-	white-space: nowrap;
-	overflow: hidden;
-	animation: typing 1s steps(29, end), /* # of steps = # of chars */
-	           /*blink-caret .5s step-end infinite alternate;*/
-/*}*/
-
 input {
-    font-family: 'Open Sans', 'Monaco', monospace;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 100;
     font-size: 13px;
     color: #333;
     border: none;
     border-radius: 30px;
-    margin: 5px 8px;
+    margin: 4px 8px;
     letter-spacing: 1px;
     width: 95%;
 }
@@ -242,29 +222,42 @@ input:focus, textarea:focus {
 .sml-btn-container {
     /*border: 1px solid orange;*/
     height: 100%;
-    width: 348px;
+    width: 252px;
     margin: 0 auto;
     text-align: left;
 }
 
+    .sml-btn-container .sub {
+        /*border: 1px solid rebeccapurple;*/
+        height: 100%;
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+        margin-left: -4px;
+    }
+    
+    .box {
+        width: 24px;
+    }
+
     .sml-btn-container .fa {
-        margin: 9px 12px 0 6px;
-        color: #96999E;
+        margin: 7px 0px 0 0px;
         cursor: pointer;
-        font-size: 18px;
+        font-size: 16px;
+        color: #00AB6B;
+    }
+    
+    .sml-btn-container .fa-square-o {
+        padding-left: 0px;
     }
     
     .sml-btn-container h6 {
         display: inline-block;
-        font-size: 10px;
+        font-size: 11px;
         font-weight: 100;
-        letter-spacing: 0.5px;
-        color: #96999E;
-    }
-    
-    .sml-btn-container:hover h6, .sml-btn-container:hover .fa-trash-o {
-        color: #ED6464;
-        cursor: pointer;         
+        cursor: default;
+        vertical-align: top;
+        padding-top: 7px;
     }
 
 .section {
@@ -356,10 +349,23 @@ input:focus, textarea:focus {
 .sml-btn {
     border: 1px solid #00AB6B;
     border-radius: 10px;
-    width: 56px;
-    margin: 5px auto;
+    width: 52px;
+    height: 20px;
+    margin-left: 12px;
     cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 5px;
 }
+
+    .sml-btn h6 {
+        font-size: 9px;
+        font-weight: 400;
+        text-align: center;
+        letter-spacing: 0.5px;
+        color: #333;
+        line-height: 11px;
+    }
 
 .sml-btn:hover {
     -webkit-box-shadow: inset 0px 0px 1.5px 0px #00AB6B;
@@ -367,7 +373,7 @@ input:focus, textarea:focus {
     box-shadow: inset 0px 0px 1.5px 0px #00AB6B;
 }
 
-.editTaskInput {
+/*.editTaskInput {
     border: 1px solid #00AB6B;
     border-radius: 30px;
     font-family: 'Open Sans', sans-serif;
@@ -386,6 +392,6 @@ input:focus, textarea:focus {
     padding-bottom: 1px;
     margin: 18px 0 0 10px;
     vertical-align: top;
-}
+}*/
 
 
