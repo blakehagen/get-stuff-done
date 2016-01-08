@@ -38,7 +38,7 @@ app.put('/api/tasks/:id', TaskCtrl.updateTask);
 // Delete Task
 app.delete('/api/tasks/:id', TaskCtrl.deleteTask);
 // Delete All Completed Tasks
-app.delete('/api/tasks/completed/:id', TaskCtrl.deleteCompletedTasks);
+// app.delete('/api/tasks/completed/:id', TaskCtrl.deleteCompletedTasks);
 
 // USER ENDPOINTS //
 app.post('/api/users', UserCtrl.createUser);
