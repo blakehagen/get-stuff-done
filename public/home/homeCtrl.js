@@ -16,13 +16,7 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
     };
 
     $scope.tasks();
-    
-    // SET DUE BY //
-    var dueBy;
-    if($scope.day === 'true'){
-        dueBy = 'day';
-    }
-    console.log(dueBy);
+
 
     // POST NEW TASK 
     $scope.postNew = function () {
@@ -70,23 +64,33 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
             $scope.tasks();
         })
     };
-
+    
+    // SET DUE BY FIELD //
     $scope.selectDeadlineToggleDay = function () {
-        $scope.day = !$scope.day;
-        $scope.week = false;
-        $scope.month = false;
+        $scope.dueByDay = false;
+        $scope.dueByWeek = true;
+        $scope.dueByMonth = true;
+        console.log('day: ', $scope.dueByDay);
+        console.log('week: ', $scope.dueByWeek);
+        console.log('month: ', $scope.dueByMonth);
     };
 
     $scope.selectDeadlineToggleWeek = function () {
-        $scope.week = !$scope.week;
-        $scope.day = false;
-        $scope.month = false;
+        $scope.dueByWeek = false;
+        $scope.dueByDay = true;
+        $scope.dueByMonth = true;
+        console.log('day: ', $scope.dueByDay);
+        console.log('week: ', $scope.dueByWeek);
+        console.log('month: ', $scope.dueByMonth);
     };
 
     $scope.selectDeadlineToggleMonth = function () {
-        $scope.month = !$scope.month;
-        $scope.day = false;
-        $scope.week = false;
+        $scope.dueByMonth = false;
+        $scope.dueByDay = true;
+        $scope.dueByWeek = true;
+        console.log('day: ', $scope.dueByDay);
+        console.log('week: ', $scope.dueByWeek);
+        console.log('month: ', $scope.dueByMonth);
     };
 
 

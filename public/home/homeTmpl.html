@@ -31,15 +31,15 @@
             <h6>Due by end of:</h6>
         </div>
         <div class="sub box">
-            <input type="checkbox" name="checkboxG1" id="checkboxG1" class="css-checkbox" ng-checked="false" />
+            <input type="checkbox" name="day" id="checkboxG1" class="css-checkbox" ng-checked="false" ng-model='dueByDay' ng-click="selectDeadlineToggleDay()"/>
             <label for="checkboxG1" class="css-label">Day</label>
         </div>
         <div class="sub box">
-            <input type="checkbox" name="checkboxG2" id="checkboxG2" class="css-checkbox" ng-checked="true"/>
+            <input type="checkbox" name="week" id="checkboxG2" class="css-checkbox" ng-checked="true" ng-model='dueByWeek' ng-click="selectDeadlineToggleWeek()"/>
             <label for="checkboxG2" class="css-label">Week</label>
         </div>
         <div class="sub box">
-            <input type="checkbox" name="checkboxG3" id="checkboxG3" class="css-checkbox" ng-checked="true"/>
+            <input type="checkbox" name="month" id="checkboxG3" class="css-checkbox" ng-checked="true" ng-model='dueByMonth'ng-click="selectDeadlineToggleMonth()"/>
             <label for="checkboxG3" class="css-label">Month</label>
         </div>
         <!--<div class="sub box">
