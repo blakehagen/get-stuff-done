@@ -104,6 +104,45 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
         console.log('week: ', $scope.dueByWeek);
         console.log('month: ', $scope.dueByMonth);
     };
+    
+    // FOLDER VIEWS & FILTER ON FOLDER CLICK //
+    $scope.dayShow = false;
+    $scope.weekShow = true;
+    $scope.monthShow = true;
+
+    $scope.filterProp = 'day';
+
+    $scope.showDayTasks = function () {
+        $scope.dayShow = false;
+        $scope.weekShow = true;
+        $scope.monthShow = true;
+
+        $scope.filterProp = 'day';
+    };
+
+    $scope.showWeekTasks = function () {
+        $scope.weekShow = false;
+        $scope.monthShow = true;
+        $scope.dayShow = true;
+
+        $scope.filterProp = 'week';
+    };
+
+    $scope.showMonthTasks = function () {
+        $scope.monthShow = false;
+        $scope.weekShow = true;
+        $scope.dayShow = true;
+
+        $scope.filterProp = 'month';
+    };
+
+
+
+
+
+
+
+
 
 
 });

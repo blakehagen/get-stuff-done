@@ -30,40 +30,61 @@
         <div class="sub">
             <h6>Due by end of:</h6>
         </div>
-        <div class="sub box">
-            <input type="checkbox" name="day" id="checkboxG1" class="css-checkbox" ng-checked="false" ng-model='dueByDay' ng-click="selectDeadlineToggleDay()"/>
+        <div class="sub">
+            <input type="checkbox" name="day" id="checkboxG1" class="css-checkbox" ng-checked="false" ng-model='dueByDay' ng-click="selectDeadlineToggleDay()"
+            />
             <label for="checkboxG1" class="css-label">Day</label>
         </div>
-        <div class="sub box">
-            <input type="checkbox" name="week" id="checkboxG2" class="css-checkbox" ng-checked="true" ng-model='dueByWeek' ng-click="selectDeadlineToggleWeek()"/>
+        <div class="sub">
+            <input type="checkbox" name="week" id="checkboxG2" class="css-checkbox" ng-checked="true" ng-model='dueByWeek' ng-click="selectDeadlineToggleWeek()"
+            />
             <label for="checkboxG2" class="css-label">Week</label>
         </div>
-        <div class="sub box">
-            <input type="checkbox" name="month" id="checkboxG3" class="css-checkbox" ng-checked="true" ng-model='dueByMonth'ng-click="selectDeadlineToggleMonth()"/>
+        <div class="sub">
+            <input type="checkbox" name="month" id="checkboxG3" class="css-checkbox" ng-checked="true" ng-model='dueByMonth' ng-click="selectDeadlineToggleMonth()"
+            />
             <label for="checkboxG3" class="css-label">Month</label>
         </div>
-        <!--<div class="sub box">
-            <i class="fa fa-square-o" ng-hide="day" ng-click="selectDeadlineToggleDay()"></i><i class="fa fa-check-square-o"
-            ng-show="day" ng-click="selectDeadlineToggleDay()"></i>
-        </div>
-        <div class="sub">
-            <h6>Day</h6>
-        </div>
-        <div class="sub box">
-            <i class="fa fa-square-o" ng-hide="week" ng-click="selectDeadlineToggleWeek()"></i><i class="fa fa-check-square-o"
-            ng-show="week" ng-click="selectDeadlineToggleWeek()"></i>
-        </div>
-        <div class="sub">
-            <h6>Week</h6>
-        </div>
-        <div class="sub box">
-            <i class="fa fa-square-o" ng-hide="month" ng-click="selectDeadlineToggleMonth()"></i><i class="fa fa-check-square-o"
-            ng-show="month" ng-click="selectDeadlineToggleMonth()"></i>
-        </div>
-        <div class="sub">
-            <h6>Month</h6>
-        </div>-->
     </div>
 </div>
+
+<div class="top-container">
+</div>
+
+<div class="top-container">
+    <div class="sml-btn-container folders-title">
+        <div class="sub" ng-show="dayShow" ng-click="showDayTasks()">
+            <i class="fa fa-folder-o"></i>
+        </div>
+        <div class="sub" ng-hide="dayShow">
+            <i class="fa fa-folder-open-o"></i>
+        </div>
+        <div class="sub">
+            <h5>Day</h5>
+        </div>
+        <div class="sub" ng-show="weekShow" ng-click="showWeekTasks()">
+            <i class="fa fa-folder-o"></i>
+        </div>
+        <div class="sub" ng-hide="weekShow">
+            <i class="fa fa-folder-open-o"></i>
+        </div>
+        <div class="sub">
+            <h5>Week</h5>
+        </div>
+        <div class="sub" ng-show="monthShow" ng-click="showMonthTasks()">
+            <i class="fa fa-folder-o"></i>
+        </div>
+        <div class="sub" ng-hide="monthShow">
+            <i class="fa fa-folder-open-o"></i>
+        </div>
+        <div class="sub">
+            <h5>Month</h5>
+        </div>
+    </div>
+</div>
+
+<div class="top-container">
+</div>
+
 
 <new-tasks-directive></new-tasks-directive>

@@ -214,7 +214,7 @@ input:focus, textarea:focus {
    /* ************************** */ 
 
 .sml-btn-container {
-    /* border: 1px solid orange; */
+     /*border: 1px solid orange; */
     height: 100%;
     width: 280px;
     margin: 0 auto;
@@ -362,6 +362,32 @@ input:focus, textarea:focus {
     -moz-box-shadow: inset 0px 0px 1.5px 0px #00AB6B;
     box-shadow: inset 0px 0px 1.5px 0px #00AB6B;
 }
+
+/* FOLDER TOGGLES */
+
+.folders-title {
+    text-align: center;
+    padding-top: 0px;
+    padding-right: 35px;
+    width: 300px;
+}
+
+    .folders-title .fa {
+        color: #555;
+        font-size: 25px;
+        margin: 0px;
+    }
+
+    .folders-title .sub {
+        width: 36px;
+        margin-top: 5px;
+    }
+    
+    .folders-title .sub h5 {
+        font-size: 14px;
+        padding-right: 20px;
+        padding-top: 2px;
+    }
 
 
 

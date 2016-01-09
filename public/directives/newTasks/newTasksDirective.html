@@ -1,5 +1,5 @@
 <div class="main">
-    <div class="row" ng-repeat="task in taskData | orderBy: '-'">
+    <div class="row" ng-repeat="task in taskData | filter: {dueBy: filterProp } : true | orderBy: '-'">
         <div class="side">
             <i class="fa fa-times" id="gray" ng-show="deleteOptions" ng-click="deleteTask(task._id)"></i>
             <i class="fa fa-square-o" ng-click="completed(task._id, task.status, this)" ng-if="task.status !== 'completed'"></i>
