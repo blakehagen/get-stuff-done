@@ -4,10 +4,6 @@
     -moz-box-sizing: border-box;
 }
 
-/*html {
-    height: 100%;
-}*/
-
 body {
     margin: 0;
     height: 100vh;
@@ -117,7 +113,6 @@ h6 {
         font-weight: 400;
         text-align: center;
         line-height: 10px;
-        letter-spacing: 0.5px;
         color: #333;
     }
     
@@ -194,7 +189,6 @@ input {
     border: none;
     border-radius: 30px;
     margin: 4px 8px;
-    letter-spacing: 1px;
     width: 95%;
 }
 
@@ -220,10 +214,11 @@ input:focus, textarea:focus {
    /* ************************** */ 
 
 .sml-btn-container {
-    /*border: 1px solid orange;*/
+    /* border: 1px solid orange; */
     height: 100%;
-    width: 252px;
+    width: 280px;
     margin: 0 auto;
+    padding-top: 5px;
     text-align: left;
 }
 
@@ -233,11 +228,7 @@ input:focus, textarea:focus {
         display: inline-block;
         vertical-align: top;
         text-align: center;
-        margin-left: -4px;
-    }
-    
-    .box {
-        width: 24px;
+        margin-left: 4px;
     }
 
     .sml-btn-container .fa {
@@ -362,7 +353,6 @@ input:focus, textarea:focus {
         font-size: 9px;
         font-weight: 400;
         text-align: center;
-        letter-spacing: 0.5px;
         color: #333;
         line-height: 11px;
     }
@@ -373,25 +363,54 @@ input:focus, textarea:focus {
     box-shadow: inset 0px 0px 1.5px 0px #00AB6B;
 }
 
-/*.editTaskInput {
-    border: 1px solid #00AB6B;
-    border-radius: 30px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 18px;
-    color: #333;
-    padding: 3px 0 3px 25px;
-    line-height: 23px;
-    margin-left: 0px;
-    width: 65%;
-    display: inline-block;
+
+
+
+
+
+
+/* CSS Created by CSS CHECKBOX */
+/**********************************/
+/**** www.CSScheckbox.com *********/
+/*general styles for all CSS Checkboxes*/
+label {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-.update-btn {
+input[type=checkbox].css-checkbox {
+    position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
+}
+
+input[type=checkbox].css-checkbox + label.css-label {
+    padding: 0px 0px 0px 16px;
     display: inline-block;
-    text-align: center;
-    padding-bottom: 1px;
-    margin: 18px 0 0 10px;
+    line-height: 10px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    font-size: 11px;
+    font-weight: 100;
+    font-family: "Open Sans", sans-serif;
     vertical-align: top;
-}*/
+    margin-top: 10px;
+    cursor: pointer;
+    color: #00AB6B;
+}
 
+input[type=checkbox].css-checkbox:checked + label.css-label {
+    background-position: 0 -18px;
+}
 
+label.css-label {
+    background-image:url(assets/check1.png);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

@@ -1,36 +1,41 @@
 angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stateParams, mainService) {
+
+    $scope.user = $stateParams.user;
     
-    // Toggle Delete Options //
+    // TOGGLE DELETE OPTION //
     $scope.showDeleteOptions = function () {
         $scope.deleteOptions = !$scope.deleteOptions;
-    }
+    };
 
-    // Populate Current User Tasks //
+    // GET CURRENT USER TASKS //
     $scope.tasks = function () {
-        mainService.getTasks($stateParams.user).then(function (response) {
-            // console.log(response);
+        mainService.getTasks($scope.user).then(function (response) {
             $scope.taskData = response.tasks;
             $scope.name = response.name;
-            // console.log('taskData', $scope.taskData);
-            $scope.user = $stateParams.user;
         })
     };
-    
-    // GET USER/TASKS
+
     $scope.tasks();
+    
+    // SET DUE BY //
+    var dueBy;
+    if($scope.day === 'true'){
+        dueBy = 'day';
+    }
+    console.log(dueBy);
 
     // POST NEW TASK 
     $scope.postNew = function () {
         var postNewObj = {
             name: $scope.newTask,
             userId: $scope.user,
+            dueBy: dueBy,
             createdAt: moment().format('ddd, MMM D YYYY, h:mma')
         };
 
         mainService.postTask(postNewObj).then(function (response) {
             $scope.taskData.push(response);
             $scope.newTask = '';
-            // $scope.inputToggle();
         })
     };
 
@@ -70,21 +75,19 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
         $scope.day = !$scope.day;
         $scope.week = false;
         $scope.month = false;
-    }
+    };
 
     $scope.selectDeadlineToggleWeek = function () {
         $scope.week = !$scope.week;
         $scope.day = false;
         $scope.month = false;
-
-    }
+    };
 
     $scope.selectDeadlineToggleMonth = function () {
         $scope.month = !$scope.month;
         $scope.day = false;
         $scope.week = false;
-
-    }
+    };
 
 
 });

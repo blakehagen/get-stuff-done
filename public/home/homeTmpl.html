@@ -28,9 +28,21 @@
 <div class="top-container">
     <div class="sml-btn-container">
         <div class="sub">
-            <h6>Due by end of</h6>
+            <h6>Due by end of:</h6>
         </div>
         <div class="sub box">
+            <input type="checkbox" name="checkboxG1" id="checkboxG1" class="css-checkbox" ng-checked="false" />
+            <label for="checkboxG1" class="css-label">Day</label>
+        </div>
+        <div class="sub box">
+            <input type="checkbox" name="checkboxG2" id="checkboxG2" class="css-checkbox" ng-checked="true"/>
+            <label for="checkboxG2" class="css-label">Week</label>
+        </div>
+        <div class="sub box">
+            <input type="checkbox" name="checkboxG3" id="checkboxG3" class="css-checkbox" ng-checked="true"/>
+            <label for="checkboxG3" class="css-label">Month</label>
+        </div>
+        <!--<div class="sub box">
             <i class="fa fa-square-o" ng-hide="day" ng-click="selectDeadlineToggleDay()"></i><i class="fa fa-check-square-o"
             ng-show="day" ng-click="selectDeadlineToggleDay()"></i>
         </div>
@@ -50,7 +62,7 @@
         </div>
         <div class="sub">
             <h6>Month</h6>
-        </div>
+        </div>-->
     </div>
 </div>
 
