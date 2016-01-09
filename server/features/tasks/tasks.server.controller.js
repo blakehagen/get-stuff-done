@@ -5,8 +5,10 @@ module.exports = {
     
     // CREATE
     createTask: function (req, res, next) {
+        // console.log(req.body);
         var task = new Task(req.body);
         task.save(function (err, task) {
+            // console.log(task);
             if(err){
                 res.status(500);
             };

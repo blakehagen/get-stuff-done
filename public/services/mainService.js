@@ -5,7 +5,7 @@ angular.module('getStuffDoneApp').service('mainService', function ($http, $q) {
         var deferred = $q.defer();
         $http({
             method: 'GET',
-            url: 'http://localhost:3000/api/user/' + userId
+            url: '/api/user/' + userId
         }).then(function (response) {
             // console.log(response.data);
             deferred.resolve(response.data)
@@ -15,10 +15,11 @@ angular.module('getStuffDoneApp').service('mainService', function ($http, $q) {
     
     // CREATE NEW TASK //
     this.postTask = function (postNewObj) {
+        console.log(postNewObj);
         var deferred = $q.defer()
         $http({
             method: 'POST',
-            url: 'http://localhost:3000/api/tasks',
+            url: '/api/tasks',
             dataType: 'json',
             data: postNewObj
         }).then(function (response) {
@@ -33,7 +34,7 @@ angular.module('getStuffDoneApp').service('mainService', function ($http, $q) {
         var deferred = $q.defer()
         $http({
             method: 'DELETE',
-            url: 'http://localhost:3000/api/tasks/' + delObj.id
+            url: '/api/tasks/' + delObj.id
         }).then(function (response) {
             deferred.resolve(response)
         })
@@ -45,7 +46,7 @@ angular.module('getStuffDoneApp').service('mainService', function ($http, $q) {
         var deferred = $q.defer()
         $http({
             method: 'PUT',
-            url: 'http://localhost:3000/api/tasks/' + id,
+            url: '/api/tasks/' + id,
             dataType: 'json',
             data: status
         }).then(function (response) {

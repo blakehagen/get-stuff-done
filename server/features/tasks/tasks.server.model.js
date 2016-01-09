@@ -7,7 +7,7 @@ var TaskSchema = new Schema({
     userId: { type: String, required: true },
     createdAt: { type: String, default: moment().format('ddd, MMM D YYYY, h:mma') },
     status: { type: String, default: "not-completed" },
-    dueBy: {type: String, enum: ['Day', 'Week', 'Month']}
+    dueBy: { type: String }
 });
 
 module.exports = mongoose.model('Task', TaskSchema);

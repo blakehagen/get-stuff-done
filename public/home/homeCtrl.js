@@ -20,16 +20,28 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
 
     // POST NEW TASK 
     $scope.postNew = function () {
+        if ($scope.dueByDay === false) {
+            $scope.dueBy = 'day';
+        } else if ($scope.dueByWeek === false) {
+            $scope.dueBy = 'week';
+        } else {
+            $scope.dueBy = 'month'
+        }
+
         var postNewObj = {
             name: $scope.newTask,
             userId: $scope.user,
-            dueBy: dueBy,
+            dueBy: $scope.dueBy,
             createdAt: moment().format('ddd, MMM D YYYY, h:mma')
         };
 
         mainService.postTask(postNewObj).then(function (response) {
+            console.log(response);
             $scope.taskData.push(response);
             $scope.newTask = '';
+            $scope.dueByDay = false;
+            $scope.dueByWeek = true;
+            $scope.dueByMonth = true;
         })
     };
 
