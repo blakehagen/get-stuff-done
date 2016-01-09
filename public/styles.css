@@ -214,7 +214,7 @@ input:focus, textarea:focus {
    /* ************************** */ 
 
 .sml-btn-container {
-     /*border: 1px solid orange; */
+    /*border: 1px solid orange; */
     height: 100%;
     width: 280px;
     margin: 0 auto;
@@ -369,8 +369,21 @@ input:focus, textarea:focus {
     text-align: center;
     padding-top: 0px;
     padding-right: 35px;
-    width: 300px;
+    width: 370px;
 }
+
+    .folders-title .del-options {
+        /*border: 1px solid red;*/
+        display: inline-block;
+        margin: 0px 10px 0px 12px;
+    }
+    
+        #del-options-tog {
+            font-size: 14px;
+            margin-top: 6px;
+            margin-right: 26px;
+            color: #A0A0A0;
+        }
 
     .folders-title .fa {
         color: #555;
@@ -380,7 +393,7 @@ input:focus, textarea:focus {
 
     .folders-title .sub {
         width: 36px;
-        margin-top: 5px;
+        /*margin-top: 5px;*/
     }
     
     .folders-title .sub h5 {

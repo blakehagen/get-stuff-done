@@ -10,7 +10,6 @@
         </div>
     </div>
     <div class="options center">
-        <i class="fa fa-bars" ng-click="showDeleteOptions()"></i>
         <div class="task-input" ng-click="inputToggle()" ng-show="taskAnimateBox">
         </div>
         <div class="task-input">
@@ -53,6 +52,9 @@
 
 <div class="top-container">
     <div class="sml-btn-container folders-title">
+        <div class="del-options">
+            <i class="fa fa-trash-o" id="del-options-tog" ng-click="showDeleteOptions()"></i>
+        </div>
         <div class="sub" ng-show="dayShow" ng-click="showDayTasks()">
             <i class="fa fa-folder-o"></i>
         </div>
