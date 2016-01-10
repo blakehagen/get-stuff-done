@@ -93,18 +93,48 @@ h6 {
 
 /* LOGIN PAGE */
 
-/*.login-wrap {
-    width: 300px;
-    height: 215px;
+.login-wrap {
+    width: 280px;
+    height: 115px;
     margin: auto;
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-     border: 1px solid blue; 
+    /*border: 1px solid blue; */
     vertical-align: middle;
-}*/
+    text-align: center;
+}
+
+.main-title-login-page {
+    width: 100%;
+    heigth: 100px;
+    /*border: 1px solid red;*/
+}
+
+ .main-title-login-page h1 {
+     font-size: 40px;
+ }
+
+.login-btn {
+    margin: 14px auto;
+    width: 125px;
+    height: 36px;
+    /*border: 1px solid #00AB6B;*/
+    border-radius: 20px;
+    background: #00AB6B;
+}
+
+    .login-btn h3 {
+        font-size: 16px;
+        font-weight: 400;
+        text-align: center;
+        line-height: 35px;
+        color: #FFF;
+    }
+
+/*************************************/
 
 .fixed-top {
     width: 100%;
@@ -129,28 +159,6 @@ h6 {
     /*border: 1px solid red;*/
     float: left;
 }
-
-.login-btn {
-    width: 100px;
-    height: 100%;
-    float: left;
-    border: 1px solid #00AB6B;
-    border-radius: 15px; 
-    margin-left: 50px;
-    margin-right: 10px;
-    background: #fff;
-}
-
-    .login-btn h5 {
-        font-size: 14px;
-        font-weight: 400;
-        text-align: center;
-        line-height: 27px;
-        color: #333;
-        letter-spacing: 0.5px;
-    }
-    
-    /* ************ */
     
 .main-pg-wrapper {
     margin-top: 284px;
@@ -180,7 +188,7 @@ h6 {
     height: 100%;
     vertical-align: top;
     margin-right: 50px;
-    /*border: 1px solid palevioletred;*/
+    border: 1px solid palevioletred;
 }
 
 .greeting {
@@ -188,6 +196,7 @@ h6 {
     height: 100%;
     margin: 0px 4px 0 5px;
     vertical-align: top;
+    border: 1px solid green;
 }
 
 .greeting h5 {
@@ -272,7 +281,6 @@ input:focus, textarea:focus {
 :-ms-input-placeholder {  
    color: #ddd;
 }
-   /* ************************** */ 
 
 .sml-btn-container {
     /*border: 1px solid orange; */
@@ -466,11 +474,6 @@ input:focus, textarea:focus {
     }
 
 
-
-
-
-
-
 /* CSS Created by CSS CHECKBOX */
 /**********************************/
 /**** www.CSScheckbox.com *********/
@@ -516,6 +519,8 @@ label.css-label {
     -ms-user-select: none;
     user-select: none;
 }
+
+/******************************/
 
 /* MEDIA QUERIES */
 
