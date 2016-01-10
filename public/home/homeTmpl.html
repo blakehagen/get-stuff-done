@@ -1,10 +1,12 @@
 <div class="fixed-top">
     <div class="title-container">
         <h2>taskCheckr</h2>
+    </div>
 
-        <div class="id-container">
+    <div class="top-container sml-top">
+        <div class="info-info">
             <div class="social">
-                <a href="http://blakehagen.github.io" target="_blank"><h5>BlakeH &copy; 2015</h5></a>
+                <a href="http://blakehagen.github.io" target="_blank"><h5>BlakeH &copy; 2016</h5></a>
             </div>
             <div class="social">
                 <a href="http://github.com/blakehagen" target="_blank"><i class="fa fa-github"></i></a>
@@ -17,33 +19,37 @@
             </div>
         </div>
     </div>
-    
+
+
+
     <div class="top-container">
+
         <div class="options left">
             <a href="/auth/logout">
                 <div class="login-btn sign-out-btn">
                     <h6>Sign Out</h6>
                 </div>
             </a>
-            <div class="social">
-                <h5 id="greeting">Hi, {{name}}</h5>
+            <div class="greeting">
+                <h5>Hi, {{name}}</h5>
             </div>
-        </div>
-        <div class="options center">
-            <div class="task-input" ng-click="inputToggle()" ng-show="taskAnimateBox">
-            </div>
-            <div class="task-input">
-                <input ng-keyup="$event.keyCode == 13 && postNew()" placeholder="Add a task ..." type="text" ng-model="newTask" autofocus>
-                </input>
-            </div>
-            <div class="sml-btn" ng-click="postNew()">
-                <h6>Submit</h6>
-            </div>
-        </div>
-        <div class="options">
         </div>
     </div>
 
+    <div class="top-container">
+    </div>
+
+    <div class="top-container">
+        <div class="task-input" ng-click="inputToggle()" ng-show="taskAnimateBox">
+        </div>
+        <div class="task-input">
+            <input ng-keyup="$event.keyCode == 13 && postNew()" placeholder="Add a task ..." type="text" ng-model="newTask" autofocus>
+            </input>
+        </div>
+        <div class="sml-btn" ng-click="postNew()">
+            <h6>Submit</h6>
+        </div>
+    </div>
     <div class="top-container">
         <div class="sml-btn-container">
             <div class="sub">
@@ -66,10 +72,8 @@
             </div>
         </div>
     </div>
-
     <div class="top-container">
     </div>
-
     <div class="top-container">
         <div class="sml-btn-container folders-title">
             <div class="del-options">
@@ -104,7 +108,6 @@
             </div>
         </div>
     </div>
-
     <div class="top-container">
     </div>
 </div>
