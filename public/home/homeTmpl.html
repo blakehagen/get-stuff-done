@@ -64,7 +64,7 @@
             <div class="sub" ng-hide="dayShow">
                 <i class="fa fa-folder-open-o"></i>
             </div>
-            <div class="sub">
+            <div class="sub" ng-click="showDayTasks()">
                 <h5>Day</h5>
             </div>
             <div class="sub" ng-show="weekShow" ng-click="showWeekTasks()">
@@ -73,7 +73,7 @@
             <div class="sub" ng-hide="weekShow">
                 <i class="fa fa-folder-open-o"></i>
             </div>
-            <div class="sub">
+            <div class="sub" ng-click="showWeekTasks()">
                 <h5>Week</h5>
             </div>
             <div class="sub" ng-show="monthShow" ng-click="showMonthTasks()">
@@ -82,7 +82,7 @@
             <div class="sub" ng-hide="monthShow">
                 <i class="fa fa-folder-open-o"></i>
             </div>
-            <div class="sub">
+            <div class="sub" ng-click="showMonthTasks()">
                 <h5>Month</h5>
             </div>
         </div>

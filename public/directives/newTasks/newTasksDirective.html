@@ -7,8 +7,10 @@
         </div>
         <div class="row-item">
             <h5>{{task.name}}</h5>
-            <h6>{{task.createdAt}}</h6>
-            <h6>Due end of {{task.dueBy}}</h6>
+            <h6><span>{{task.createdAt_nonRead | amCalendar}}</span></h6>
+            <h6 ng-if="task.dueBy === 'Day'"><span>Due in {{ task.dueDate | amDifference : null : 'hours' }} hours</span></h6>
+            <h6 ng-if="task.dueBy == 'Week'"><span>Due in {{ task.dueDate | amDifference : null : 'days' }} days</span></h6>
+            <h6 ng-if="task.dueBy == 'Month'"><span>Due in {{ task.dueDate | amDifference : null : 'days' }} days</span></h6>
         </div>
     </div>
 </div>

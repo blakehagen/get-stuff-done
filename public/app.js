@@ -1,4 +1,4 @@
-angular.module('getStuffDoneApp', ['ui.router']).config(function ($stateProvider, $urlRouterProvider) {
+angular.module('getStuffDoneApp', ['ui.router', 'angularMoment']).config(function ($stateProvider, $urlRouterProvider) {
 
     $stateProvider
 

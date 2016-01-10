@@ -379,6 +379,7 @@ input:focus, textarea:focus {
     padding-top: 0px;
     padding-right: 35px;
     width: 370px;
+    cursor: default;
 }
 
     .folders-title .del-options {
@@ -409,6 +410,7 @@ input:focus, textarea:focus {
         font-size: 14px;
         padding-right: 20px;
         padding-top: 2px;
+        cursor: pointer;
     }
 
 

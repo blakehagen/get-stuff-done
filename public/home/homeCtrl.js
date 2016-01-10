@@ -19,19 +19,25 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
 
 
     // POST NEW TASK 
+    $scope.dueByDay = false
     $scope.postNew = function () {
         if ($scope.dueByDay === false) {
             $scope.dueBy = 'Day';
+            $scope.dueDate = moment().endOf('day');
         } else if ($scope.dueByWeek === false) {
             $scope.dueBy = 'Week';
+            $scope.dueDate = moment().endOf('week');
         } else {
             $scope.dueBy = 'Month'
+            $scope.dueDate = moment().endOf('month');
         }
 
         var postNewObj = {
             name: $scope.newTask,
             userId: $scope.user,
             dueBy: $scope.dueBy,
+            dueDate: $scope.dueDate,
+            createdAt_nonRead: Date(),
             createdAt: moment().format('ddd, MMM D YYYY, h:mma')
         };
 
@@ -110,14 +116,14 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
     $scope.weekShow = true;
     $scope.monthShow = true;
 
-    $scope.filterProp = 'day';
+    $scope.filterProp = 'Day';
 
     $scope.showDayTasks = function () {
         $scope.dayShow = false;
         $scope.weekShow = true;
         $scope.monthShow = true;
 
-        $scope.filterProp = 'day';
+        $scope.filterProp = 'Day';
     };
 
     $scope.showWeekTasks = function () {
@@ -125,7 +131,7 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
         $scope.monthShow = true;
         $scope.dayShow = true;
 
-        $scope.filterProp = 'week';
+        $scope.filterProp = 'Week';
     };
 
     $scope.showMonthTasks = function () {
@@ -133,7 +139,7 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
         $scope.weekShow = true;
         $scope.dayShow = true;
 
-        $scope.filterProp = 'month';
+        $scope.filterProp = 'Month';
     };
 
 
