@@ -376,9 +376,13 @@ input:focus, textarea:focus {
     .row-item h6 {
         font-size: 11px;
         font-weight: 100;
-        color: #00AB6B;
+        color: #ED6464;
         padding-top: 2px;
     }
+    
+#green {
+    color: #00AB6B;
+}
 
 .sml-btn {
     border: 1px solid #00AB6B;

@@ -7,10 +7,11 @@
         </div>
         <div class="row-item">
             <h5>{{task.name}}</h5>
-            <h6><span>Posted {{task.createdAt_nonRead | amCalendar}}</span></h6>
-            <h6 ng-if="task.dueBy === 'Day'"><span>Due in {{ task.dueDate | amDifference : null : 'hours' }} hour(s)</span></h6>
-            <h6 ng-if="task.dueBy == 'Week'"><span>Due in {{ task.dueDate | amDifference : null : 'days' }} day(s)</span></h6>
-            <h6 ng-if="task.dueBy == 'Month'"><span>Due in {{ task.dueDate | amDifference : null : 'days' }} day(s)</span></h6>
+            <h6 id="green"><span>Posted {{task.createdAt_nonRead | amCalendar}}</span></h6>
+            <h6 ng-if="task.dueBy === 'Day' && task.status !== 'completed'"><span>Due in {{ task.dueDate | amDifference : null : 'hours' }} hour(s)</span></h6>
+            <h6 ng-if="task.dueBy == 'Week' && task.status !== 'completed'"><span>Due in {{ task.dueDate | amDifference : null : 'days' }} day(s)</span></h6>
+            <h6 ng-if="task.dueBy == 'Month' && task.status !== 'completed'"><span>Due in {{ task.dueDate | amDifference : null : 'days' }} day(s)</span></h6>
+            <h6 ng-if="task.status === 'completed'" id="green">Completed</h6>
         </div>
     </div>
 </div>
