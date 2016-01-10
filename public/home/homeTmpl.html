@@ -3,7 +3,7 @@
         <h2>taskCheckr</h2>
     </div>
 
-    <div class="top-container sml-top">
+    <div class="sml-top">
         <div class="info-info">
             <div class="social">
                 <a href="http://blakehagen.github.io" target="_blank"><h5>BlakeH &copy; 2016</h5></a>
@@ -20,13 +20,10 @@
         </div>
     </div>
 
-
-
-    <div class="top-container">
-
+    <div class="top-container" id="bump-down">
         <div class="options left">
             <a href="/auth/logout">
-                <div class="login-btn sign-out-btn">
+                <div class="sign-out-btn">
                     <h6>Sign Out</h6>
                 </div>
             </a>
@@ -40,7 +37,7 @@
     </div>
 
     <div class="top-container">
-        <div class="task-input" ng-click="inputToggle()" ng-show="taskAnimateBox">
+        <div class="task-input"  ng-show="taskAnimateBox">
         </div>
         <div class="task-input">
             <input ng-keyup="$event.keyCode == 13 && postNew()" placeholder="Add a task ..." type="text" ng-model="newTask" autofocus>

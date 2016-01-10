@@ -17,7 +17,6 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
 
     $scope.tasks();
 
-
     // POST NEW TASK 
     $scope.dueByDay = false
     $scope.postNew = function () {
@@ -132,14 +131,6 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
 
         $scope.filterProp = 'Month';
     };
-
-
-
-
-
-
-
-
 
 
 });

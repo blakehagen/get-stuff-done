@@ -151,13 +151,18 @@ h6 {
     /*border: 1px solid dodgerblue;*/
     text-align: center;
     background: #fff;
-    display: block;
+}
+
+#bump-down {
+    margin-top: 15px;
 }
 
 .sml-top {
     height: 15px;
     /*border: 1px solid red;*/
     float: left;
+    width: 100%;
+    background: #FFF;
 }
     
 .main-pg-wrapper {
@@ -168,6 +173,11 @@ h6 {
     width: 52px;
     height: 20px;
     margin-top: 4px;
+    margin-left: 50px;
+    border: 1px solid #00AB6B;
+    border-radius: 10px;
+    vertical-align: top;
+    display: inline-block;
 }
 .sign-out-btn:hover {
     -webkit-box-shadow: inset 0px 0px 1.5px 0px #00AB6B;
@@ -188,7 +198,6 @@ h6 {
     height: 100%;
     vertical-align: top;
     margin-right: 50px;
-    border: 1px solid palevioletred;
 }
 
 .greeting {
@@ -196,7 +205,6 @@ h6 {
     height: 100%;
     margin: 0px 4px 0 5px;
     vertical-align: top;
-    border: 1px solid green;
 }
 
 .greeting h5 {
@@ -320,20 +328,21 @@ input:focus, textarea:focus {
         padding-top: 7px;
     }
 
-.btn {
+/*.btn {
     height: 30px;
     width: 110px;
     line-height: 28px;
     padding-left: 0px;
     margin: 15px auto;
     cursor: pointer;
-}
+    border: 10px solid red;
+}*/
 
-.btn:hover {
+/*.btn:hover {
     -webkit-box-shadow: inset 0px 0px 2.5px 0px #00AB6B;
     -moz-box-shadow: inset 0px 0px 2.5px 0px #00AB6B;
     box-shadow: inset 0px 0px 2.5px 0px #00AB6B;
-}
+}*/
 
 .main { 
     /*border: 1px solid blue;*/
@@ -565,12 +574,8 @@ label.css-label {
     
     .folders-title .sub h5 {
         font-size: 12px;
-        /*padding-right: 20px;*/
         padding-top: 5px;
         cursor: pointer;
-    }
-    
-    
-    
+    } 
     
 }
