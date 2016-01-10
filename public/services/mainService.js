@@ -15,7 +15,6 @@ angular.module('getStuffDoneApp').service('mainService', function ($http, $q) {
     
     // CREATE NEW TASK //
     this.postTask = function (postNewObj) {
-        console.log(postNewObj);
         var deferred = $q.defer()
         $http({
             method: 'POST',

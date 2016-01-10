@@ -37,12 +37,12 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
             userId: $scope.user,
             dueBy: $scope.dueBy,
             dueDate: $scope.dueDate,
-            createdAt_nonRead: Date(),
+            createdAt_nonRead: moment(),
             createdAt: moment().format('ddd, MMM D YYYY, h:mma')
         };
 
         mainService.postTask(postNewObj).then(function (response) {
-            console.log(response);
+            // console.log(response);
             $scope.taskData.push(response);
             $scope.newTask = '';
             $scope.dueByDay = false;
@@ -88,27 +88,18 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
         $scope.dueByDay = false;
         $scope.dueByWeek = true;
         $scope.dueByMonth = true;
-        console.log('day: ', $scope.dueByDay);
-        console.log('week: ', $scope.dueByWeek);
-        console.log('month: ', $scope.dueByMonth);
     };
 
     $scope.selectDeadlineToggleWeek = function () {
         $scope.dueByWeek = false;
         $scope.dueByDay = true;
         $scope.dueByMonth = true;
-        console.log('day: ', $scope.dueByDay);
-        console.log('week: ', $scope.dueByWeek);
-        console.log('month: ', $scope.dueByMonth);
     };
 
     $scope.selectDeadlineToggleMonth = function () {
         $scope.dueByMonth = false;
         $scope.dueByDay = true;
         $scope.dueByWeek = true;
-        console.log('day: ', $scope.dueByDay);
-        console.log('week: ', $scope.dueByWeek);
-        console.log('month: ', $scope.dueByMonth);
     };
     
     // FOLDER VIEWS & FILTER ON FOLDER CLICK //
