@@ -224,7 +224,7 @@ input:focus, textarea:focus {
 .sml-btn-container {
     /*border: 1px solid orange; */
     height: 100%;
-    width: 338px;
+    width: 317px;
     margin: 0 auto;
     padding-top: 5px;
     text-align: left;
@@ -437,14 +437,14 @@ input[type=checkbox].css-checkbox {
 input[type=checkbox].css-checkbox + label.css-label {
     padding: 0px 0px 0px 16px;
     display: inline-block;
-    line-height: 10px;
     background-repeat: no-repeat;
+    /*border: 1px solid red;*/
     background-position: 0 0;
     font-size: 11px;
     font-weight: 100;
     font-family: "Open Sans", sans-serif;
     vertical-align: top;
-    margin-top: 10px;
+    margin-top: 6px;
     cursor: pointer;
     color: #00AB6B;
 }
@@ -454,7 +454,7 @@ input[type=checkbox].css-checkbox:checked + label.css-label {
 }
 
 label.css-label {
-    background-image:url(assets/check1.png);
+    background-image:url('assets/check-use.png');
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;

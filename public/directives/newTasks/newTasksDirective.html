@@ -6,8 +6,9 @@
             <i class="fa fa-check" ng-click="completed(task._id, task.status, this)" ng-if="task.status !== 'not-completed'"></i>
         </div>
         <div class="row-item">
-            <h5 ng-hide="taskName">{{task.name}}</h5>
+            <h5>{{task.name}}</h5>
             <h6>{{task.createdAt}}</h6>
+            <h6>Due end of {{task.dueBy}}</h6>
         </div>
     </div>
 </div>

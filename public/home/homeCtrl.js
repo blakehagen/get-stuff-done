@@ -21,11 +21,11 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
     // POST NEW TASK 
     $scope.postNew = function () {
         if ($scope.dueByDay === false) {
-            $scope.dueBy = 'day';
+            $scope.dueBy = 'Day';
         } else if ($scope.dueByWeek === false) {
-            $scope.dueBy = 'week';
+            $scope.dueBy = 'Week';
         } else {
-            $scope.dueBy = 'month'
+            $scope.dueBy = 'Month'
         }
 
         var postNewObj = {
