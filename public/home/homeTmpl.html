@@ -1,92 +1,96 @@
-<div class="top-container">
-    <div class="options left">
-        <a href="/auth/logout">
-            <div class="login-btn sign-out-btn">
-                <h6>Sign Out</h6>
+<div class="main-pg-wrapper">
+
+
+    <div class="top-container">
+        <div class="options left">
+            <a href="/auth/logout">
+                <div class="login-btn sign-out-btn">
+                    <h6>Sign Out</h6>
+                </div>
+            </a>
+            <div class="social">
+                <h5 id="greeting">Hi, {{name}}</h5>
             </div>
-        </a>
-        <div class="social">
-            <h5 id="greeting">Hi, {{name}}</h5>
+        </div>
+        <div class="options center">
+            <div class="task-input" ng-click="inputToggle()" ng-show="taskAnimateBox">
+            </div>
+            <div class="task-input">
+                <input ng-keyup="$event.keyCode == 13 && postNew()" placeholder="Add a task ..." type="text" ng-model="newTask" autofocus>
+                </input>
+            </div>
+            <div class="sml-btn" ng-click="postNew()">
+                <h6>Submit</h6>
+            </div>
+        </div>
+        <div class="options">
         </div>
     </div>
-    <div class="options center">
-        <div class="task-input" ng-click="inputToggle()" ng-show="taskAnimateBox">
-        </div>
-        <div class="task-input">
-            <input ng-keyup="$event.keyCode == 13 && postNew()" placeholder="Add a task ..." type="text" ng-model="newTask" autofocus>
-            </input>
-        </div>
-        <div class="sml-btn" ng-click="postNew()">
-            <h6>Submit</h6>
+
+    <div class="top-container">
+        <div class="sml-btn-container">
+            <div class="sub">
+                <h6>New task due by end of:</h6>
+            </div>
+            <div class="sub">
+                <input type="checkbox" name="day" id="checkboxG1" class="css-checkbox" ng-checked="false" ng-model='dueByDay' ng-click="selectDeadlineToggleDay()"
+                />
+                <label for="checkboxG1" class="css-label">Day</label>
+            </div>
+            <div class="sub">
+                <input type="checkbox" name="week" id="checkboxG2" class="css-checkbox" ng-checked="true" ng-model='dueByWeek' ng-click="selectDeadlineToggleWeek()"
+                />
+                <label for="checkboxG2" class="css-label">Week</label>
+            </div>
+            <div class="sub">
+                <input type="checkbox" name="month" id="checkboxG3" class="css-checkbox" ng-checked="true" ng-model='dueByMonth' ng-click="selectDeadlineToggleMonth()"
+                />
+                <label for="checkboxG3" class="css-label">Month</label>
+            </div>
         </div>
     </div>
-    <div class="options">
+
+    <div class="top-container">
     </div>
-</div>
 
-<div class="top-container">
-    <div class="sml-btn-container">
-        <div class="sub">
-            <h6>Due by end of:</h6>
-        </div>
-        <div class="sub">
-            <input type="checkbox" name="day" id="checkboxG1" class="css-checkbox" ng-checked="false" ng-model='dueByDay' ng-click="selectDeadlineToggleDay()"
-            />
-            <label for="checkboxG1" class="css-label">Day</label>
-        </div>
-        <div class="sub">
-            <input type="checkbox" name="week" id="checkboxG2" class="css-checkbox" ng-checked="true" ng-model='dueByWeek' ng-click="selectDeadlineToggleWeek()"
-            />
-            <label for="checkboxG2" class="css-label">Week</label>
-        </div>
-        <div class="sub">
-            <input type="checkbox" name="month" id="checkboxG3" class="css-checkbox" ng-checked="true" ng-model='dueByMonth' ng-click="selectDeadlineToggleMonth()"
-            />
-            <label for="checkboxG3" class="css-label">Month</label>
-        </div>
-    </div>
-</div>
-
-<div class="top-container">
-</div>
-
-<div class="top-container">
-    <div class="sml-btn-container folders-title">
-        <div class="del-options">
-            <i class="fa fa-trash-o" id="del-options-tog" ng-click="showDeleteOptions()"></i>
-        </div>
-        <div class="sub" ng-show="dayShow" ng-click="showDayTasks()">
-            <i class="fa fa-folder-o"></i>
-        </div>
-        <div class="sub" ng-hide="dayShow">
-            <i class="fa fa-folder-open-o"></i>
-        </div>
-        <div class="sub">
-            <h5>Day</h5>
-        </div>
-        <div class="sub" ng-show="weekShow" ng-click="showWeekTasks()">
-            <i class="fa fa-folder-o"></i>
-        </div>
-        <div class="sub" ng-hide="weekShow">
-            <i class="fa fa-folder-open-o"></i>
-        </div>
-        <div class="sub">
-            <h5>Week</h5>
-        </div>
-        <div class="sub" ng-show="monthShow" ng-click="showMonthTasks()">
-            <i class="fa fa-folder-o"></i>
-        </div>
-        <div class="sub" ng-hide="monthShow">
-            <i class="fa fa-folder-open-o"></i>
-        </div>
-        <div class="sub">
-            <h5>Month</h5>
+    <div class="top-container">
+        <div class="sml-btn-container folders-title">
+            <div class="del-options">
+                <i class="fa fa-trash-o" id="del-options-tog" ng-click="showDeleteOptions()"></i>
+            </div>
+            <div class="sub" ng-show="dayShow" ng-click="showDayTasks()">
+                <i class="fa fa-folder-o"></i>
+            </div>
+            <div class="sub" ng-hide="dayShow">
+                <i class="fa fa-folder-open-o"></i>
+            </div>
+            <div class="sub">
+                <h5>Day</h5>
+            </div>
+            <div class="sub" ng-show="weekShow" ng-click="showWeekTasks()">
+                <i class="fa fa-folder-o"></i>
+            </div>
+            <div class="sub" ng-hide="weekShow">
+                <i class="fa fa-folder-open-o"></i>
+            </div>
+            <div class="sub">
+                <h5>Week</h5>
+            </div>
+            <div class="sub" ng-show="monthShow" ng-click="showMonthTasks()">
+                <i class="fa fa-folder-o"></i>
+            </div>
+            <div class="sub" ng-hide="monthShow">
+                <i class="fa fa-folder-open-o"></i>
+            </div>
+            <div class="sub">
+                <h5>Month</h5>
+            </div>
         </div>
     </div>
+
+    <div class="top-container">
+    </div>
+    
+    <new-tasks-directive></new-tasks-directive>
+    
 </div>
-
-<div class="top-container">
-</div>
-
-
-<new-tasks-directive></new-tasks-directive>

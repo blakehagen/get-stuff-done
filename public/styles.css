@@ -9,6 +9,11 @@ body {
     height: 100vh;
     width: 100%;
     border: 1px solid #fff;
+    background: url('assets/tree-compressor.png') no-repeat bottom center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .left {
@@ -84,6 +89,7 @@ h6 {
     border-radius: 15px; 
     margin-left: 50px;
     margin-right: 10px;
+    background: #fff;
 }
 
     .login-btn h5 {
@@ -179,6 +185,7 @@ h6 {
     border-radius: 30px;
     height: 100%;
     display: inline-block;
+    background: #fff;
 }
 
 input {
@@ -190,6 +197,7 @@ input {
     border-radius: 30px;
     margin: 4px 8px;
     width: 95%;
+    background: #fff;
 }
 
 input:focus, textarea:focus {
@@ -216,7 +224,7 @@ input:focus, textarea:focus {
 .sml-btn-container {
     /*border: 1px solid orange; */
     height: 100%;
-    width: 280px;
+    width: 338px;
     margin: 0 auto;
     padding-top: 5px;
     text-align: left;
@@ -347,6 +355,7 @@ input:focus, textarea:focus {
     display: inline-block;
     vertical-align: top;
     margin-top: 5px;
+    background: #fff;
 }
 
     .sml-btn h6 {
