@@ -143,7 +143,7 @@ h6 {
 .fixed-top {
     width: 100%;
     height: auto;
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     /*border: 1px solid green;*/
