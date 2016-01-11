@@ -47,7 +47,7 @@ app.get('/api/user/:id', UserCtrl.getUser);
 app.use(express.static(__dirname + '/public'));
 
 // PORT //
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 80;
 
 app.listen(port, function () {
     console.log('Listenting on port ' + port);
