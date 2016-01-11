@@ -21,6 +21,10 @@ body {
     background-size: cover;
 }
 
+::-webkit-scrollbar {
+   display: none;
+}
+
 .left {
     float: left;
 }
