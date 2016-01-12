@@ -113,7 +113,6 @@ h6 {
 
 .main-title-login-page {
     width: 100%;
-    heigth: 100px;
     /*border: 1px solid red;*/
 }
 
@@ -142,10 +141,10 @@ h6 {
 
 .fixed-top {
     width: 100%;
-    height: auto;
-    position: fixed !important;
+    height: 287px;
+    /*position: fixed !important;
     top: 0;
-    right: 0;
+    right: 0;*/
     /*border: 1px solid green;*/
 }
 
@@ -169,9 +168,9 @@ h6 {
     background: #FFF;
 }
     
-.main-pg-wrapper {
+/*.main-pg-wrapper {
     margin-top: 284px;
-}
+}*/
     
 .sign-out-btn {
     width: 52px;
@@ -332,25 +331,11 @@ input:focus, textarea:focus {
         padding-top: 7px;
     }
 
-/*.btn {
-    height: 30px;
-    width: 110px;
-    line-height: 28px;
-    padding-left: 0px;
-    margin: 15px auto;
-    cursor: pointer;
-    border: 10px solid red;
-}*/
-
-/*.btn:hover {
-    -webkit-box-shadow: inset 0px 0px 2.5px 0px #00AB6B;
-    -moz-box-shadow: inset 0px 0px 2.5px 0px #00AB6B;
-    box-shadow: inset 0px 0px 2.5px 0px #00AB6B;
-}*/
-
 .main { 
     /*border: 1px solid blue;*/
     width: 470px;
+    height: calc(100vh - 287px);
+    overflow: auto;
     margin: 0px auto;
 }
 
