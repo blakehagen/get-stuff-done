@@ -53,17 +53,17 @@
                 <h6>Set task due by end of: </h6>
             </div>
             <div class="sub">
-                <input type="checkbox" name="day" id="checkboxG1" class="css-checkbox" ng-checked="false" ng-model='dueByDay' ng-click="selectDeadlineToggleDay()"
+                <input type="checkbox" name="day" id="checkboxG1" class="css-checkbox" ng-checked="dueByDay" ng-model='dueByDay' ng-click="showDayTasks()"
                 />
                 <label for="checkboxG1" class="css-label">Day</label>
             </div>
             <div class="sub">
-                <input type="checkbox" name="week" id="checkboxG2" class="css-checkbox" ng-checked="true" ng-model='dueByWeek' ng-click="selectDeadlineToggleWeek()"
+                <input type="checkbox" name="week" id="checkboxG2" class="css-checkbox" ng-checked="dueByWeek" ng-model='dueByWeek' ng-click="showWeekTasks()"
                 />
                 <label for="checkboxG2" class="css-label">Week</label>
             </div>
             <div class="sub">
-                <input type="checkbox" name="month" id="checkboxG3" class="css-checkbox" ng-checked="true" ng-model='dueByMonth' ng-click="selectDeadlineToggleMonth()"
+                <input type="checkbox" name="month" id="checkboxG3" class="css-checkbox" ng-checked="dueByMonth" ng-model='dueByMonth' ng-click="showMonthTasks()"
                 />
                 <label for="checkboxG3" class="css-label">Month</label>
             </div>

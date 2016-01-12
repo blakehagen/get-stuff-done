@@ -18,7 +18,10 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
     $scope.tasks();
 
     // POST NEW TASK 
-    $scope.dueByDay = false
+    $scope.dueByDay = false;
+    $scope.dueByWeek = true;
+    $scope.dueByMonth = true;
+    
     $scope.postNew = function () {
         if ($scope.dueByDay === false) {
             $scope.dueBy = 'Day';
@@ -41,12 +44,8 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
         };
 
         mainService.postTask(postNewObj).then(function (response) {
-            // console.log(response);
             $scope.taskData.push(response);
             $scope.newTask = '';
-            $scope.dueByDay = false;
-            $scope.dueByWeek = true;
-            $scope.dueByMonth = true;
         })
     };
 
@@ -114,6 +113,10 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
         $scope.monthShow = true;
 
         $scope.filterProp = 'Day';
+
+        $scope.dueByDay = false;
+        $scope.dueByWeek = true;
+        $scope.dueByMonth = true;
     };
 
     $scope.showWeekTasks = function () {
@@ -122,6 +125,10 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
         $scope.dayShow = true;
 
         $scope.filterProp = 'Week';
+
+        $scope.dueByWeek = false;
+        $scope.dueByDay = true;
+        $scope.dueByMonth = true;
     };
 
     $scope.showMonthTasks = function () {
@@ -130,7 +137,10 @@ angular.module('getStuffDoneApp').controller('homeCtrl', function ($scope, $stat
         $scope.dayShow = true;
 
         $scope.filterProp = 'Month';
-    };
 
+        $scope.dueByMonth = false;
+        $scope.dueByDay = true;
+        $scope.dueByWeek = true;
+    };
 
 });
