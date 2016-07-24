@@ -8,10 +8,10 @@ module.exports = function (app, passport) {
 
     app.get('/auth/google/callback', passport.authenticate('google'), function (req, res, next) {
         if (req.user) {
-            res.redirect('/#/' + req.user._id + '/mytasks');
+            res.redirect('http://taskcheckr.com/#/' + req.user._id + '/mytasks');
         }
         else {
-            res.redirect('/');
+            res.redirect('http://taskcheckr.com/#/');
         }
     });  
     
