@@ -124,8 +124,7 @@ h6 {
     margin: 14px auto;
     width: 125px;
     height: 36px;
-    /*border: 1px solid #00AB6B;*/
-    border-radius: 20px;
+    border-radius: 8px;
     background: #00AB6B;
 }
 
@@ -178,7 +177,7 @@ h6 {
     margin-top: 4px;
     margin-left: 50px;
     border: 1px solid #00AB6B;
-    border-radius: 10px;
+    border-radius: 6px;
     vertical-align: top;
     display: inline-block;
 }
@@ -255,7 +254,7 @@ h6 {
     padding-left: 2px;
     text-align: center;
     border: 1px solid #00AB6B;
-    border-radius: 30px;
+    border-radius: 8px;
     height: 100%;
     display: inline-block;
     background: #fff;
@@ -406,7 +405,7 @@ input:focus, textarea:focus {
 
 .sml-btn {
     border: 1px solid #00AB6B;
-    border-radius: 10px;
+    border-radius: 6px;
     width: 52px;
     height: 20px;
     margin-left: 12px;
